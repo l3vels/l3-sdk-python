@@ -177,9 +177,9 @@ Class | Method | HTTP request | Description
 *AssetApi* | [**get_asset_by_id**](docs/apis/tags/AssetApi.md#get_asset_by_id) | **get** /v1/asset/{project_id}/{id} | Retrieve asset by ID
 *AssetApi* | [**get_assets**](docs/apis/tags/AssetApi.md#get_assets) | **get** /v1/asset | Retrieve assets
 *AssetApi* | [**update_asset**](docs/apis/tags/AssetApi.md#update_asset) | **patch** /v1/asset/{id} | Update asset
-*CollectionApi* | [**collection_controller_collection_by_id**](docs/apis/tags/CollectionApi.md#collection_controller_collection_by_id) | **get** /v1/collection/{project_id}/{id} | Retrieve collection by ID
-*CollectionApi* | [**collection_controller_collections**](docs/apis/tags/CollectionApi.md#collection_controller_collections) | **get** /v1/collection | Retrieve collections
-*CollectionApi* | [**collection_controller_collections_count_by_game_id**](docs/apis/tags/CollectionApi.md#collection_controller_collections_count_by_game_id) | **get** /v1/collection/count/{project_id} | Count collections
+*CollectionApi* | [**count_collections_by_game_id**](docs/apis/tags/CollectionApi.md#count_collections_by_game_id) | **get** /v1/collection/count/{project_id} | Count collections
+*CollectionApi* | [**get_collection_by_id**](docs/apis/tags/CollectionApi.md#get_collection_by_id) | **get** /v1/collection/{project_id}/{id} | Retrieve collection by ID
+*CollectionApi* | [**get_collections**](docs/apis/tags/CollectionApi.md#get_collections) | **get** /v1/collection | Retrieve collections
 *ContractApi* | [**contract_controller_collection_size**](docs/apis/tags/ContractApi.md#contract_controller_collection_size) | **get** /v1/contract/collection-size | Collection size
 *ContractApi* | [**contract_controller_contract_uri**](docs/apis/tags/ContractApi.md#contract_controller_contract_uri) | **get** /v1/contract/contract-uri | Get Contract URI
 *ContractApi* | [**contract_controller_set_contract_uri**](docs/apis/tags/ContractApi.md#contract_controller_set_contract_uri) | **put** /v1/contract/contract-uri | Update Contract URI

@@ -1,6 +1,5 @@
 .gitignore
 .gitlab-ci.yml
-.openapi-generator-ignore
 .travis.yml
 README.md
 docs/apis/tags/AssetApi.md
@@ -77,18 +76,4 @@ setup.py
 test-requirements.txt
 test/__init__.py
 test/test_models/__init__.py
-test/test_models/test_asset.py
-test/test_models/test_assets_response_dto.py
-test/test_models/test_collection.py
-test/test_models/test_create_player_dto.py
-test/test_models/test_mint_batch_dto.py
-test/test_models/test_mint_dto.py
-test/test_models/test_player.py
-test/test_models/test_player_asset.py
-test/test_models/test_project.py
-test/test_models/test_set_contract_uri_dto.py
-test/test_models/test_set_sale_status_dto.py
-test/test_models/test_token_dto.py
-test/test_models/test_transaction.py
-test/test_models/test_update_asset_dto.py
 tox.ini

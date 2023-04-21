@@ -199,7 +199,7 @@ _all_accept_content_types = (
 
 class BaseApi(api_client.Api):
     @typing.overload
-    def _collection_controller_collections_count_by_game_id_oapg(
+    def _count_collections_by_game_id_oapg(
         self,
         header_params: RequestHeaderParams = frozendict.frozendict(),
         path_params: RequestPathParams = frozendict.frozendict(),
@@ -212,7 +212,7 @@ class BaseApi(api_client.Api):
     ]: ...
 
     @typing.overload
-    def _collection_controller_collections_count_by_game_id_oapg(
+    def _count_collections_by_game_id_oapg(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -223,7 +223,7 @@ class BaseApi(api_client.Api):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def _collection_controller_collections_count_by_game_id_oapg(
+    def _count_collections_by_game_id_oapg(
         self,
         header_params: RequestHeaderParams = frozendict.frozendict(),
         path_params: RequestPathParams = frozendict.frozendict(),
@@ -236,7 +236,7 @@ class BaseApi(api_client.Api):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def _collection_controller_collections_count_by_game_id_oapg(
+    def _count_collections_by_game_id_oapg(
         self,
         header_params: RequestHeaderParams = frozendict.frozendict(),
         path_params: RequestPathParams = frozendict.frozendict(),
@@ -309,11 +309,11 @@ class BaseApi(api_client.Api):
         return api_response
 
 
-class CollectionControllerCollectionsCountByGameId(BaseApi):
+class CountCollectionsByGameId(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     @typing.overload
-    def collection_controller_collections_count_by_game_id(
+    def count_collections_by_game_id(
         self,
         header_params: RequestHeaderParams = frozendict.frozendict(),
         path_params: RequestPathParams = frozendict.frozendict(),
@@ -326,7 +326,7 @@ class CollectionControllerCollectionsCountByGameId(BaseApi):
     ]: ...
 
     @typing.overload
-    def collection_controller_collections_count_by_game_id(
+    def count_collections_by_game_id(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -337,7 +337,7 @@ class CollectionControllerCollectionsCountByGameId(BaseApi):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def collection_controller_collections_count_by_game_id(
+    def count_collections_by_game_id(
         self,
         header_params: RequestHeaderParams = frozendict.frozendict(),
         path_params: RequestPathParams = frozendict.frozendict(),
@@ -350,7 +350,7 @@ class CollectionControllerCollectionsCountByGameId(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def collection_controller_collections_count_by_game_id(
+    def count_collections_by_game_id(
         self,
         header_params: RequestHeaderParams = frozendict.frozendict(),
         path_params: RequestPathParams = frozendict.frozendict(),
@@ -359,7 +359,7 @@ class CollectionControllerCollectionsCountByGameId(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._collection_controller_collections_count_by_game_id_oapg(
+        return self._count_collections_by_game_id_oapg(
             header_params=header_params,
             path_params=path_params,
             accept_content_types=accept_content_types,
@@ -419,7 +419,7 @@ class ApiForget(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._collection_controller_collections_count_by_game_id_oapg(
+        return self._count_collections_by_game_id_oapg(
             header_params=header_params,
             path_params=path_params,
             accept_content_types=accept_content_types,
