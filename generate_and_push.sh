@@ -19,16 +19,16 @@ git config user.name "$USERNAME"
 git config user.email "$USER_EMAIL"
 
 echo git diff-index --quiet HEAD --;
-# Check if changes exist
-# if [[ -z $(git status --porcelain) ]]; then
-#     echo "No changes detected."
-# else
-#     echo "Changes are detected."
-#     # Add, commit, and push the changes
-#     git add .
-#     git commit -m "$COMMIT_NAME"
-#     git pull --rebase origin main
-#     git push origin HEAD
-# fi
+Check if changes exist
+if [[ -z $(git status --porcelain) ]]; then
+    echo "No changes detected."
+else
+    echo "Changes are detected."
+    # Add, commit, and push the changes
+    git add .
+    git commit -m "$COMMIT_NAME"
+    git pull --rebase origin main
+    git push origin HEAD
+fi
 
 
