@@ -267,7 +267,7 @@ _all_accept_content_types = (
 
 class BaseApi(api_client.Api):
     @typing.overload
-    def _player_controller_get_players_oapg(
+    def _get_players_oapg(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -280,7 +280,7 @@ class BaseApi(api_client.Api):
     ]: ...
 
     @typing.overload
-    def _player_controller_get_players_oapg(
+    def _get_players_oapg(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         query_params: RequestQueryParams = frozendict.frozendict(),
@@ -291,7 +291,7 @@ class BaseApi(api_client.Api):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def _player_controller_get_players_oapg(
+    def _get_players_oapg(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -304,7 +304,7 @@ class BaseApi(api_client.Api):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def _player_controller_get_players_oapg(
+    def _get_players_oapg(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -382,11 +382,11 @@ class BaseApi(api_client.Api):
         return api_response
 
 
-class PlayerControllerGetPlayers(BaseApi):
+class GetPlayers(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     @typing.overload
-    def player_controller_get_players(
+    def get_players(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -399,7 +399,7 @@ class PlayerControllerGetPlayers(BaseApi):
     ]: ...
 
     @typing.overload
-    def player_controller_get_players(
+    def get_players(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         query_params: RequestQueryParams = frozendict.frozendict(),
@@ -410,7 +410,7 @@ class PlayerControllerGetPlayers(BaseApi):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def player_controller_get_players(
+    def get_players(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -423,7 +423,7 @@ class PlayerControllerGetPlayers(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def player_controller_get_players(
+    def get_players(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -432,7 +432,7 @@ class PlayerControllerGetPlayers(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._player_controller_get_players_oapg(
+        return self._get_players_oapg(
             query_params=query_params,
             header_params=header_params,
             accept_content_types=accept_content_types,
@@ -492,7 +492,7 @@ class ApiForget(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._player_controller_get_players_oapg(
+        return self._get_players_oapg(
             query_params=query_params,
             header_params=header_params,
             accept_content_types=accept_content_types,

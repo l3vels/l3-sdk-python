@@ -184,21 +184,20 @@ Class | Method | HTTP request | Description
 *ContractApi* | [**contract_controller_contract_uri**](docs/apis/tags/ContractApi.md#contract_controller_contract_uri) | **get** /v1/contract/contract-uri | Get Contract URI
 *ContractApi* | [**contract_controller_set_contract_uri**](docs/apis/tags/ContractApi.md#contract_controller_set_contract_uri) | **put** /v1/contract/contract-uri | Update Contract URI
 *ContractApi* | [**contract_controller_set_sale_status**](docs/apis/tags/ContractApi.md#contract_controller_set_sale_status) | **put** /v1/contract/sale-status | Update Sale status
-*GameApi* | [**project_controller_project_by_id**](docs/apis/tags/GameApi.md#project_controller_project_by_id) | **get** /v1/game/{id} | Retrieve Game
+*GameApi* | [**get_game_by_id**](docs/apis/tags/GameApi.md#get_game_by_id) | **get** /v1/game/{id} | Retrieve Game
 *MintApi* | [**mint_controller_airdrop**](docs/apis/tags/MintApi.md#mint_controller_airdrop) | **post** /v1/mint/airdrop | Airdrop asset to player
 *MintApi* | [**mint_controller_award**](docs/apis/tags/MintApi.md#mint_controller_award) | **post** /v1/mint/award | Award asset to player
 *MintApi* | [**mint_controller_mint**](docs/apis/tags/MintApi.md#mint_controller_mint) | **post** /v1/mint | Mint asset
 *MintApi* | [**mint_controller_mint_batch**](docs/apis/tags/MintApi.md#mint_controller_mint_batch) | **post** /v1/mint/batch | Batch mint assets
 *MintApi* | [**mint_controller_player_mint**](docs/apis/tags/MintApi.md#mint_controller_player_mint) | **post** /v1/mint/player | Mint asset by player
 *MintApi* | [**mint_controller_player_mint_batch**](docs/apis/tags/MintApi.md#mint_controller_player_mint_batch) | **post** /v1/mint/batch-player | Batch mint assets by player
+*PlayerApi* | [**count_players_by_game_id**](docs/apis/tags/PlayerApi.md#count_players_by_game_id) | **get** /v1/player/count/{project_id} | Count players
+*PlayerApi* | [**create_player**](docs/apis/tags/PlayerApi.md#create_player) | **post** /v1/player | Create new player
+*PlayerApi* | [**get_player_by_id**](docs/apis/tags/PlayerApi.md#get_player_by_id) | **get** /v1/player/{project_id}/{id} | Retrieve player by ID
+*PlayerApi* | [**get_players**](docs/apis/tags/PlayerApi.md#get_players) | **get** /v1/player | Retrieve players
 *PlayerApi* | [**player_asset_controller_player_asset_by_id**](docs/apis/tags/PlayerApi.md#player_asset_controller_player_asset_by_id) | **get** /v1/player-asset/{project_id}/{id} | Retrieve player asset by ID
 *PlayerApi* | [**player_asset_controller_player_assets**](docs/apis/tags/PlayerApi.md#player_asset_controller_player_assets) | **get** /v1/player-asset | Retrieve player assets
-*PlayerApi* | [**player_controller_create_player**](docs/apis/tags/PlayerApi.md#player_controller_create_player) | **post** /v1/player | Create new player
-*PlayerApi* | [**player_controller_delete_player**](docs/apis/tags/PlayerApi.md#player_controller_delete_player) | **delete** /v1/player | Delete a Player
-*PlayerApi* | [**player_controller_get_players**](docs/apis/tags/PlayerApi.md#player_controller_get_players) | **get** /v1/player | Retrieve players
-*PlayerApi* | [**player_controller_player_by_id**](docs/apis/tags/PlayerApi.md#player_controller_player_by_id) | **get** /v1/player/{project_id}/{id} | Retrieve player by ID
-*PlayerApi* | [**player_controller_players_count_by_game_id**](docs/apis/tags/PlayerApi.md#player_controller_players_count_by_game_id) | **get** /v1/player/count/{project_id} | Count players
-*PlayerApi* | [**player_controller_update_player**](docs/apis/tags/PlayerApi.md#player_controller_update_player) | **put** /v1/player | Update an existing Player
+*PlayerApi* | [**update_player**](docs/apis/tags/PlayerApi.md#update_player) | **put** /v1/player | Update an existing Player
 *TransactionApi* | [**transaction_controller_transaction_by_id**](docs/apis/tags/TransactionApi.md#transaction_controller_transaction_by_id) | **get** /v1/transaction/{project_id}/{id} | Retrieve Transaction by ID
 *TransactionApi* | [**transaction_controller_transactions**](docs/apis/tags/TransactionApi.md#transaction_controller_transactions) | **get** /v1/transaction | Retrieve transactions
 *TransactionApi* | [**transaction_controller_webhook**](docs/apis/tags/TransactionApi.md#transaction_controller_webhook) | **post** /v1/transaction/webhook | 

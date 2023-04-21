@@ -175,7 +175,7 @@ _all_accept_content_types = (
 
 class BaseApi(api_client.Api):
     @typing.overload
-    def _player_controller_update_player_oapg(
+    def _update_player_oapg(
         self,
         header_params: RequestHeaderParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -187,7 +187,7 @@ class BaseApi(api_client.Api):
     ]: ...
 
     @typing.overload
-    def _player_controller_update_player_oapg(
+    def _update_player_oapg(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -197,7 +197,7 @@ class BaseApi(api_client.Api):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def _player_controller_update_player_oapg(
+    def _update_player_oapg(
         self,
         header_params: RequestHeaderParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -209,7 +209,7 @@ class BaseApi(api_client.Api):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def _player_controller_update_player_oapg(
+    def _update_player_oapg(
         self,
         header_params: RequestHeaderParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -267,11 +267,11 @@ class BaseApi(api_client.Api):
         return api_response
 
 
-class PlayerControllerUpdatePlayer(BaseApi):
+class UpdatePlayer(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     @typing.overload
-    def player_controller_update_player(
+    def update_player(
         self,
         header_params: RequestHeaderParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -283,7 +283,7 @@ class PlayerControllerUpdatePlayer(BaseApi):
     ]: ...
 
     @typing.overload
-    def player_controller_update_player(
+    def update_player(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -293,7 +293,7 @@ class PlayerControllerUpdatePlayer(BaseApi):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def player_controller_update_player(
+    def update_player(
         self,
         header_params: RequestHeaderParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -305,7 +305,7 @@ class PlayerControllerUpdatePlayer(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def player_controller_update_player(
+    def update_player(
         self,
         header_params: RequestHeaderParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -313,7 +313,7 @@ class PlayerControllerUpdatePlayer(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._player_controller_update_player_oapg(
+        return self._update_player_oapg(
             header_params=header_params,
             accept_content_types=accept_content_types,
             stream=stream,
@@ -368,7 +368,7 @@ class ApiForput(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._player_controller_update_player_oapg(
+        return self._update_player_oapg(
             header_params=header_params,
             accept_content_types=accept_content_types,
             stream=stream,
