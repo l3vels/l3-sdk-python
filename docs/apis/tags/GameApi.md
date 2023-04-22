@@ -9,18 +9,18 @@ Method | HTTP request | Description
 
 # **get_game_by_id**
 <a name="get_game_by_id"></a>
-> Project get_game_by_id(authorizationid)
+> Game get_game_by_id(authorizationid)
 
 Retrieve Game
 
-Get game/project by ID created on the platform.
+Get Game by ID created on the platform.
 
 ### Example
 
 ```python
 import l3vels
 from l3vels.apis.tags import game_api
-from l3vels.model.project import Project
+from l3vels.model.game import Game
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-dev.l3vels.xyz
 # See configuration.py for a list of all supported configuration parameters.
@@ -94,7 +94,7 @@ str,  | str,  |  |
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | [ApiResponseFor200](#get_game_by_id.ApiResponseFor200) | The game/project has been found.
+200 | [ApiResponseFor200](#get_game_by_id.ApiResponseFor200) | The Game has been found.
 400 | [ApiResponseFor400](#get_game_by_id.ApiResponseFor400) | Bad Request, The request was unacceptable, often due to missing a required parameter.
 401 | [ApiResponseFor401](#get_game_by_id.ApiResponseFor401) | Unauthorized, No valid API key provided.
 404 | [ApiResponseFor404](#get_game_by_id.ApiResponseFor404) | Not Found, The requested resource doesn&#x27;t exist.
@@ -113,7 +113,7 @@ headers | Unset | headers were not defined |
 # SchemaFor200ResponseBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Project**](../../models/Project.md) |  | 
+[**Game**](../../models/Game.md) |  | 
 
 
 #### get_game_by_id.ApiResponseFor400

@@ -5,13 +5,13 @@ All URIs are relative to *https://api-dev.l3vels.xyz*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**count_collections_by_game_id**](#count_collections_by_game_id) | **get** /v1/collection/count/{project_id} | Count collections
-[**get_collection_by_id**](#get_collection_by_id) | **get** /v1/collection/{project_id}/{id} | Retrieve collection by ID
+[**count_collections_by_game_id**](#count_collections_by_game_id) | **get** /v1/collection/count/{game_id} | Count collections
+[**get_collection_by_id**](#get_collection_by_id) | **get** /v1/collection/{game_id}/{id} | Retrieve collection by ID
 [**get_collections**](#get_collections) | **get** /v1/collection | Retrieve collections
 
 # **count_collections_by_game_id**
 <a name="count_collections_by_game_id"></a>
-> int, float count_collections_by_game_id(authorizationproject_id)
+> int, float count_collections_by_game_id(authorizationgame_id)
 
 Count collections
 
@@ -36,7 +36,7 @@ with l3vels.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     path_params = {
-        'project_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
+        'game_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
     }
     header_params = {
         'Authorization': "Authorization_example",
@@ -81,9 +81,9 @@ str,  | str,  |  |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-project_id | ProjectIdSchema | | 
+game_id | GameIdSchema | | 
 
-# ProjectIdSchema
+# GameIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
@@ -175,7 +175,7 @@ No authorization required
 
 # **get_collection_by_id**
 <a name="get_collection_by_id"></a>
-> Collection get_collection_by_id(authorizationidproject_id)
+> Collection get_collection_by_id(authorizationidgame_id)
 
 Retrieve collection by ID
 
@@ -202,7 +202,7 @@ with l3vels.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     path_params = {
         'id': "229fd9e0-b51f-4b20-9203-9db60995e6b1",
-        'project_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
+        'game_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
     }
     header_params = {
         'Authorization': "Authorization_example",
@@ -248,7 +248,7 @@ str,  | str,  |  |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 id | IdSchema | | 
-project_id | ProjectIdSchema | | 
+game_id | GameIdSchema | | 
 
 # IdSchema
 
@@ -257,7 +257,7 @@ Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 str,  | str,  |  | 
 
-# ProjectIdSchema
+# GameIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
@@ -348,7 +348,7 @@ No authorization required
 
 # **get_collections**
 <a name="get_collections"></a>
-> [Collection] get_collections(authorizationproject_id)
+> [Collection] get_collections(authorizationgame_id)
 
 Retrieve collections
 
@@ -374,7 +374,7 @@ with l3vels.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     query_params = {
-        'project_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
+        'game_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
     }
     header_params = {
         'Authorization': "Authorization_example",
@@ -391,7 +391,7 @@ with l3vels.ApiClient(configuration) as api_client:
 
     # example passing only optional values
     query_params = {
-        'project_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
+        'game_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         'sort': "name",
         'order': "ASC",
         'search_text': "Weapons",
@@ -427,7 +427,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-project_id | ProjectIdSchema | | 
+game_id | GameIdSchema | | 
 sort | SortSchema | | optional
 order | OrderSchema | | optional
 search_text | SearchTextSchema | | optional
@@ -435,7 +435,7 @@ limit | LimitSchema | | optional
 page | PageSchema | | optional
 
 
-# ProjectIdSchema
+# GameIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from l3vels import schemas  # noqa: F401
 
-from l3vels.model.set_contract_uri_dto import SetContractUriDto
+from l3vels.model.set_contract_uri_input import SetContractUriInput
 
 from . import path
 
@@ -56,10 +56,10 @@ request_header_authorization = api_client.HeaderParameter(
     required=True,
 )
 # body param
-SchemaForRequestBodyApplicationJson = SetContractUriDto
+SchemaForRequestBodyApplicationJson = SetContractUriInput
 
 
-request_body_set_contract_uri_dto = api_client.RequestBody(
+request_body_set_contract_uri_input = api_client.RequestBody(
     content={
         'application/json': api_client.MediaType(
             schema=SchemaForRequestBodyApplicationJson),
@@ -176,7 +176,7 @@ _status_code_to_response = {
 
 class BaseApi(api_client.Api):
     @typing.overload
-    def _contract_controller_set_contract_uri_oapg(
+    def _set_contract_uri_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: typing_extensions.Literal["application/json"] = ...,
@@ -189,7 +189,7 @@ class BaseApi(api_client.Api):
     ]: ...
 
     @typing.overload
-    def _contract_controller_set_contract_uri_oapg(
+    def _set_contract_uri_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -203,7 +203,7 @@ class BaseApi(api_client.Api):
 
 
     @typing.overload
-    def _contract_controller_set_contract_uri_oapg(
+    def _set_contract_uri_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         skip_deserialization: typing_extensions.Literal[True],
@@ -214,7 +214,7 @@ class BaseApi(api_client.Api):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def _contract_controller_set_contract_uri_oapg(
+    def _set_contract_uri_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -227,7 +227,7 @@ class BaseApi(api_client.Api):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def _contract_controller_set_contract_uri_oapg(
+    def _set_contract_uri_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = 'application/json',
@@ -261,7 +261,7 @@ class BaseApi(api_client.Api):
                 'The required body parameter has an invalid value of: unset. Set a valid value instead')
         _fields = None
         _body = None
-        serialized_data = request_body_set_contract_uri_dto.serialize(body, content_type)
+        serialized_data = request_body_set_contract_uri_input.serialize(body, content_type)
         _headers.add('Content-Type', content_type)
         if 'fields' in serialized_data:
             _fields = serialized_data['fields']
@@ -296,11 +296,11 @@ class BaseApi(api_client.Api):
         return api_response
 
 
-class ContractControllerSetContractUri(BaseApi):
+class SetContractUri(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     @typing.overload
-    def contract_controller_set_contract_uri(
+    def set_contract_uri(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: typing_extensions.Literal["application/json"] = ...,
@@ -313,7 +313,7 @@ class ContractControllerSetContractUri(BaseApi):
     ]: ...
 
     @typing.overload
-    def contract_controller_set_contract_uri(
+    def set_contract_uri(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -327,7 +327,7 @@ class ContractControllerSetContractUri(BaseApi):
 
 
     @typing.overload
-    def contract_controller_set_contract_uri(
+    def set_contract_uri(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         skip_deserialization: typing_extensions.Literal[True],
@@ -338,7 +338,7 @@ class ContractControllerSetContractUri(BaseApi):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def contract_controller_set_contract_uri(
+    def set_contract_uri(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -351,7 +351,7 @@ class ContractControllerSetContractUri(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def contract_controller_set_contract_uri(
+    def set_contract_uri(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = 'application/json',
@@ -360,7 +360,7 @@ class ContractControllerSetContractUri(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._contract_controller_set_contract_uri_oapg(
+        return self._set_contract_uri_oapg(
             body=body,
             header_params=header_params,
             content_type=content_type,
@@ -434,7 +434,7 @@ class ApiForput(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._contract_controller_set_contract_uri_oapg(
+        return self._set_contract_uri_oapg(
             body=body,
             header_params=header_params,
             content_type=content_type,

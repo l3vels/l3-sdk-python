@@ -28,7 +28,7 @@ from l3vels import schemas  # noqa: F401
 from l3vels.model.collection import Collection
 
 # Query params
-ProjectIdSchema = schemas.StrSchema
+GameIdSchema = schemas.StrSchema
 SortSchema = schemas.StrSchema
 OrderSchema = schemas.StrSchema
 SearchTextSchema = schemas.StrSchema
@@ -37,7 +37,7 @@ PageSchema = schemas.NumberSchema
 RequestRequiredQueryParams = typing_extensions.TypedDict(
     'RequestRequiredQueryParams',
     {
-        'project_id': typing.Union[ProjectIdSchema, str, ],
+        'game_id': typing.Union[GameIdSchema, str, ],
     }
 )
 RequestOptionalQueryParams = typing_extensions.TypedDict(
@@ -57,10 +57,10 @@ class RequestQueryParams(RequestRequiredQueryParams, RequestOptionalQueryParams)
     pass
 
 
-request_query_project_id = api_client.QueryParameter(
-    name="project_id",
+request_query_game_id = api_client.QueryParameter(
+    name="game_id",
     style=api_client.ParameterStyle.FORM,
-    schema=ProjectIdSchema,
+    schema=GameIdSchema,
     required=True,
     explode=True,
 )
@@ -313,7 +313,7 @@ class BaseApi(api_client.Api):
 
         prefix_separator_iterator = None
         for parameter in (
-            request_query_project_id,
+            request_query_game_id,
             request_query_sort,
             request_query_order,
             request_query_search_text,

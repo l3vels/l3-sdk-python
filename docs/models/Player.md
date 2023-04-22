@@ -13,15 +13,15 @@ Key | Input Type | Accessed Type | Description | Notes
 **last_seen** | str, datetime,  | str,  | The date when player was active last time | value must conform to RFC-3339 date-time
 **avatar** | str,  | str,  | Avatar URL of the player | 
 **is_create_wallet** | bool,  | BoolClass,  | Boolean value indicating whether the player has wallet or not | 
-**created_by** | decimal.Decimal, int, float,  | decimal.Decimal,  | The Id of the user who created the player. | 
-**account_id** | decimal.Decimal, int, float,  | decimal.Decimal,  | The unique identifier of the account that the Player belongs to. | 
+**created_by** | str,  | str,  | The Id of the user who created the player. | 
+**account_id** | str,  | str,  | The unique identifier of the account that the Player belongs to. | 
 **created_on** | str, datetime,  | str,  | The date when the player was created. | value must conform to RFC-3339 date-time
-**project_id** | str,  | str,  | The unique identifier of the project that the Player is associated with. This allows developers to organize their players by project and helps with tracking and reporting. Example: Player Jack is associated with project Fortnite. | 
-**modified_by** | decimal.Decimal, int, float,  | decimal.Decimal,  | The Id of the user who last modified the player. | 
+**modified_by** | str,  | str,  | The Id of the user who last modified the player. | 
 **name** | str,  | str,  | The name of the player | 
 **id** | str,  | str,  | The unique identifier for the Player entity. | 
 **[custom_props](#custom_props)** | dict, frozendict.frozendict,  | frozendict.frozendict,  | Custom props for player | 
 **email** | str,  | str,  | Email of the player | 
+**game_id** | str,  | str,  | The unique identifier of the game that the Player is associated with. This allows developers to organize their players by game and helps with tracking and reporting. Example: Player Jack is associated with game Fortnite. | 
 **username** | str,  | str,  | Username of the player | 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 

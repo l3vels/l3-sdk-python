@@ -15,19 +15,19 @@ Key | Input Type | Accessed Type | Description | Notes
 **description** | str,  | str,  | A brief description of the collection. | 
 **logo_image** | str,  | str,  | An image representing the collection&#x27;s logo. | 
 **web_link** | str,  | str,  | A URL link to the collection&#x27;s webpage. | 
-**created_by** | decimal.Decimal, int, float,  | decimal.Decimal,  | The Id of the user who created the collection. | 
+**created_by** | str,  | str,  | The Id of the user who created the collection. | 
 **supply** | decimal.Decimal, int, float,  | decimal.Decimal,  | The supply represents the number of assets that are available within the Collection. | 
 **url** | str,  | str,  | A unique URL for the collection on the L3vels platform. | 
 **[medias](#medias)** | list, tuple,  | tuple,  | Additional images associated with the collection, such as screenshots or promotional images. | 
-**account_id** | decimal.Decimal, int, float,  | decimal.Decimal,  | The unique identifier of the account that the Collection belongs to. | 
+**account_id** | str,  | str,  | The unique identifier of the account that the Collection belongs to. | 
 **created_on** | str, datetime,  | str,  | The date when the collection was created. | value must conform to RFC-3339 date-time
-**project_id** | str,  | str,  | The unique identifier of the project that the collection is associated with. This allows developers to organize their collections by project and helps with tracking and reporting. | 
-**modified_by** | decimal.Decimal, int, float,  | decimal.Decimal,  | The Id of the user who last modified the collection. | 
+**modified_by** | str,  | str,  | The Id of the user who last modified the collection. | 
 **name** | str,  | str,  | The name of the collection. | 
 **main_media** | str,  | str,  | The main or featured image associated with the game. You can set it from the dashboard as main image. | 
 **[custom_asset_props](#custom_asset_props)** | dict, frozendict.frozendict,  | frozendict.frozendict,  | Custom assets fields associated with the collection. | 
 **[categories](#categories)** | dict, frozendict.frozendict,  | frozendict.frozendict,  | The category or categories that the collection belongs to. | 
 **id** | str,  | str,  | The unique identifier for the collection entity. | 
+**game_id** | str,  | str,  | The unique identifier of the game that the collection is associated with. This allows developers to organize their collections by game and helps with tracking and reporting. | 
 **status** | str,  | str,  | The current status of the collection. Possible values are: Draft, Active | 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 

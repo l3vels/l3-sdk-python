@@ -15,20 +15,20 @@ Key | Input Type | Accessed Type | Description | Notes
 **block_number** | decimal.Decimal, int, float,  | decimal.Decimal,  | Unique block number in the blockchain. | 
 **contract_address** | str,  | str,  | Contract address where the transaction happened. | 
 **type** | str,  | str,  | Transaction type: Mint, Transfer, Award, Airdrop, etc. | 
-**created_by** | decimal.Decimal, int, float,  | decimal.Decimal,  | The Id of the user who created the collection. | 
-**collection_id** | str,  | str,  | The unique identifier of the collection that the transaction is associated with. This allows developers to organize their transactions by project and helps with tracking and reporting. | 
+**created_by** | str,  | str,  | The Id of the user who created the collection. | 
+**collection_id** | str,  | str,  | The unique identifier of the collection that the transaction is associated with. This allows developers to organize their transactions by game and helps with tracking and reporting. | 
 **environment** | str,  | str,  | Chain environment: Testnet, Mainnet, etc. | 
-**account_id** | decimal.Decimal, int, float,  | decimal.Decimal,  | The unique identifier of the account that the transaction belongs to. | 
+**account_id** | str,  | str,  | The unique identifier of the account that the transaction belongs to. | 
 **blockchain** | str,  | str,  | Main blockchain identifier: Ethereum, Polygon, etc. | 
 **created_on** | str, datetime,  | str,  | The date when the collection was created. | value must conform to RFC-3339 date-time
-**project_id** | str,  | str,  | The unique identifier of the project that the transaction is associated with. This allows developers to organize their transactions by project and helps with tracking and reporting. | 
-**modified_by** | decimal.Decimal, int, float,  | decimal.Decimal,  | The Id of the user who last modified the collection. | 
+**modified_by** | str,  | str,  | The Id of the user who last modified the collection. | 
 **from** | str,  | str,  | Address of the sender of the transaction. | 
 **id** | str,  | str,  | The unique identifier for the transaction entity. | 
 **to** | str,  | str,  | Address of the receiver of the transaction. It can be contract address or player address if it is a transfer transaction. | 
 **chain_name** | str,  | str,  | Chain name identifier: Ethereum, Goerli, Sepolia, PolygonPoS, etc. | 
 **[events](#events)** | list, tuple,  | tuple,  | List of events that were emitted in the transaction | 
 **transaction_hash** | str,  | str,  | Unique transaction hash in the blockchain. | 
+**game_id** | str,  | str,  | The unique identifier of the game that the transaction is associated with. This allows developers to organize their transactions by game and helps with tracking and reporting. | 
 **status** | str,  | str,  | Transaction status in Blockchain. Can be pending, success or fail | 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 

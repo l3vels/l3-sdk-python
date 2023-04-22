@@ -12,16 +12,16 @@
 # sys.setrecursionlimit(n)
 
 from l3vels.model.asset import Asset
-from l3vels.model.assets_response_dto import AssetsResponseDto
+from l3vels.model.assets_response import AssetsResponse
 from l3vels.model.collection import Collection
-from l3vels.model.create_player_dto import CreatePlayerDto
-from l3vels.model.mint_batch_dto import MintBatchDto
-from l3vels.model.mint_dto import MintDto
+from l3vels.model.create_player_input import CreatePlayerInput
+from l3vels.model.game import Game
+from l3vels.model.mint_batch_input import MintBatchInput
+from l3vels.model.mint_input import MintInput
 from l3vels.model.player import Player
 from l3vels.model.player_asset import PlayerAsset
-from l3vels.model.project import Project
-from l3vels.model.set_contract_uri_dto import SetContractUriDto
-from l3vels.model.set_sale_status_dto import SetSaleStatusDto
-from l3vels.model.token_dto import TokenDto
+from l3vels.model.set_contract_uri_input import SetContractUriInput
+from l3vels.model.set_sale_status_input import SetSaleStatusInput
+from l3vels.model.token_input import TokenInput
 from l3vels.model.transaction import Transaction
-from l3vels.model.update_asset_dto import UpdateAssetDto
+from l3vels.model.update_asset_input import UpdateAssetInput

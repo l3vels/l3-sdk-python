@@ -30,7 +30,7 @@ from l3vels.model.player_asset import PlayerAsset
 from . import path
 
 # Query params
-ProjectIdSchema = schemas.StrSchema
+GameIdSchema = schemas.StrSchema
 AssetIdSchema = schemas.StrSchema
 PlayerIdSchema = schemas.StrSchema
 SortSchema = schemas.StrSchema
@@ -40,7 +40,7 @@ PageSchema = schemas.NumberSchema
 RequestRequiredQueryParams = typing_extensions.TypedDict(
     'RequestRequiredQueryParams',
     {
-        'project_id': typing.Union[ProjectIdSchema, str, ],
+        'game_id': typing.Union[GameIdSchema, str, ],
     }
 )
 RequestOptionalQueryParams = typing_extensions.TypedDict(
@@ -61,10 +61,10 @@ class RequestQueryParams(RequestRequiredQueryParams, RequestOptionalQueryParams)
     pass
 
 
-request_query_project_id = api_client.QueryParameter(
-    name="project_id",
+request_query_game_id = api_client.QueryParameter(
+    name="game_id",
     style=api_client.ParameterStyle.FORM,
-    schema=ProjectIdSchema,
+    schema=GameIdSchema,
     required=True,
     explode=True,
 )
@@ -275,7 +275,7 @@ _all_accept_content_types = (
 
 class BaseApi(api_client.Api):
     @typing.overload
-    def _player_asset_controller_player_assets_oapg(
+    def _player_assets_oapg(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -288,7 +288,7 @@ class BaseApi(api_client.Api):
     ]: ...
 
     @typing.overload
-    def _player_asset_controller_player_assets_oapg(
+    def _player_assets_oapg(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         query_params: RequestQueryParams = frozendict.frozendict(),
@@ -299,7 +299,7 @@ class BaseApi(api_client.Api):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def _player_asset_controller_player_assets_oapg(
+    def _player_assets_oapg(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -312,7 +312,7 @@ class BaseApi(api_client.Api):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def _player_asset_controller_player_assets_oapg(
+    def _player_assets_oapg(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -333,7 +333,7 @@ class BaseApi(api_client.Api):
 
         prefix_separator_iterator = None
         for parameter in (
-            request_query_project_id,
+            request_query_game_id,
             request_query_asset_id,
             request_query_player_id,
             request_query_sort,
@@ -391,11 +391,11 @@ class BaseApi(api_client.Api):
         return api_response
 
 
-class PlayerAssetControllerPlayerAssets(BaseApi):
+class PlayerAssets(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     @typing.overload
-    def player_asset_controller_player_assets(
+    def player_assets(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -408,7 +408,7 @@ class PlayerAssetControllerPlayerAssets(BaseApi):
     ]: ...
 
     @typing.overload
-    def player_asset_controller_player_assets(
+    def player_assets(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         query_params: RequestQueryParams = frozendict.frozendict(),
@@ -419,7 +419,7 @@ class PlayerAssetControllerPlayerAssets(BaseApi):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def player_asset_controller_player_assets(
+    def player_assets(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -432,7 +432,7 @@ class PlayerAssetControllerPlayerAssets(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def player_asset_controller_player_assets(
+    def player_assets(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -441,7 +441,7 @@ class PlayerAssetControllerPlayerAssets(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._player_asset_controller_player_assets_oapg(
+        return self._player_assets_oapg(
             query_params=query_params,
             header_params=header_params,
             accept_content_types=accept_content_types,
@@ -501,7 +501,7 @@ class ApiForget(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._player_asset_controller_player_assets_oapg(
+        return self._player_assets_oapg(
             query_params=query_params,
             header_params=header_params,
             accept_content_types=accept_content_types,

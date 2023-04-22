@@ -47,7 +47,6 @@ class Asset(
             "account_id",
             "token_id",
             "created_on",
-            "project_id",
             "parent_id",
             "price",
             "asset_type",
@@ -57,6 +56,7 @@ class Asset(
             "attributes",
             "id",
             "properties",
+            "game_id",
             "status",
         }
         
@@ -98,13 +98,13 @@ class Asset(
                 def __getitem__(self, i: int) -> MetaOapg.items:
                     return super().__getitem__(i)
             main_media = schemas.StrSchema
-            account_id = schemas.NumberSchema
-            project_id = schemas.StrSchema
+            account_id = schemas.StrSchema
+            game_id = schemas.StrSchema
             collection_id = schemas.StrSchema
             created_on = schemas.DateTimeSchema
             modified_on = schemas.DateTimeSchema
-            created_by = schemas.NumberSchema
-            modified_by = schemas.NumberSchema
+            created_by = schemas.StrSchema
+            modified_by = schemas.StrSchema
             __annotations__ = {
                 "id": id,
                 "token_id": token_id,
@@ -122,7 +122,7 @@ class Asset(
                 "medias": medias,
                 "main_media": main_media,
                 "account_id": account_id,
-                "project_id": project_id,
+                "game_id": game_id,
                 "collection_id": collection_id,
                 "created_on": created_on,
                 "modified_on": modified_on,
@@ -141,7 +141,6 @@ class Asset(
     account_id: MetaOapg.properties.account_id
     token_id: MetaOapg.properties.token_id
     created_on: MetaOapg.properties.created_on
-    project_id: MetaOapg.properties.project_id
     parent_id: MetaOapg.properties.parent_id
     price: MetaOapg.properties.price
     asset_type: MetaOapg.properties.asset_type
@@ -151,6 +150,7 @@ class Asset(
     attributes: MetaOapg.properties.attributes
     id: MetaOapg.properties.id
     properties: MetaOapg.properties.properties
+    game_id: MetaOapg.properties.game_id
     status: MetaOapg.properties.status
     
     @typing.overload
@@ -202,7 +202,7 @@ class Asset(
     def __getitem__(self, name: typing_extensions.Literal["account_id"]) -> MetaOapg.properties.account_id: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["project_id"]) -> MetaOapg.properties.project_id: ...
+    def __getitem__(self, name: typing_extensions.Literal["game_id"]) -> MetaOapg.properties.game_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["collection_id"]) -> MetaOapg.properties.collection_id: ...
@@ -222,7 +222,7 @@ class Asset(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "token_id", "name", "parent_id", "properties", "attributes", "description", "status", "price", "supply", "minted_amount", "asset_type", "asset_url", "medias", "main_media", "account_id", "project_id", "collection_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "token_id", "name", "parent_id", "properties", "attributes", "description", "status", "price", "supply", "minted_amount", "asset_type", "asset_url", "medias", "main_media", "account_id", "game_id", "collection_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -276,7 +276,7 @@ class Asset(
     def get_item_oapg(self, name: typing_extensions.Literal["account_id"]) -> MetaOapg.properties.account_id: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["project_id"]) -> MetaOapg.properties.project_id: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["game_id"]) -> MetaOapg.properties.game_id: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["collection_id"]) -> MetaOapg.properties.collection_id: ...
@@ -296,7 +296,7 @@ class Asset(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "token_id", "name", "parent_id", "properties", "attributes", "description", "status", "price", "supply", "minted_amount", "asset_type", "asset_url", "medias", "main_media", "account_id", "project_id", "collection_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "token_id", "name", "parent_id", "properties", "attributes", "description", "status", "price", "supply", "minted_amount", "asset_type", "asset_url", "medias", "main_media", "account_id", "game_id", "collection_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -307,23 +307,23 @@ class Asset(
         minted_amount: typing.Union[MetaOapg.properties.minted_amount, decimal.Decimal, int, float, ],
         description: typing.Union[MetaOapg.properties.description, str, ],
         asset_url: typing.Union[MetaOapg.properties.asset_url, str, ],
-        created_by: typing.Union[MetaOapg.properties.created_by, decimal.Decimal, int, float, ],
+        created_by: typing.Union[MetaOapg.properties.created_by, str, ],
         supply: typing.Union[MetaOapg.properties.supply, decimal.Decimal, int, float, ],
         collection_id: typing.Union[MetaOapg.properties.collection_id, str, ],
         medias: typing.Union[MetaOapg.properties.medias, list, tuple, ],
-        account_id: typing.Union[MetaOapg.properties.account_id, decimal.Decimal, int, float, ],
+        account_id: typing.Union[MetaOapg.properties.account_id, str, ],
         token_id: typing.Union[MetaOapg.properties.token_id, decimal.Decimal, int, float, ],
         created_on: typing.Union[MetaOapg.properties.created_on, str, datetime, ],
-        project_id: typing.Union[MetaOapg.properties.project_id, str, ],
         parent_id: typing.Union[MetaOapg.properties.parent_id, str, ],
         price: typing.Union[MetaOapg.properties.price, decimal.Decimal, int, float, ],
         asset_type: typing.Union[MetaOapg.properties.asset_type, str, ],
-        modified_by: typing.Union[MetaOapg.properties.modified_by, decimal.Decimal, int, float, ],
+        modified_by: typing.Union[MetaOapg.properties.modified_by, str, ],
         name: typing.Union[MetaOapg.properties.name, str, ],
         main_media: typing.Union[MetaOapg.properties.main_media, str, ],
         attributes: typing.Union[MetaOapg.properties.attributes, dict, frozendict.frozendict, ],
         id: typing.Union[MetaOapg.properties.id, str, ],
         properties: typing.Union[MetaOapg.properties.properties, dict, frozendict.frozendict, ],
+        game_id: typing.Union[MetaOapg.properties.game_id, str, ],
         status: typing.Union[MetaOapg.properties.status, str, ],
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
@@ -342,7 +342,6 @@ class Asset(
             account_id=account_id,
             token_id=token_id,
             created_on=created_on,
-            project_id=project_id,
             parent_id=parent_id,
             price=price,
             asset_type=asset_type,
@@ -352,6 +351,7 @@ class Asset(
             attributes=attributes,
             id=id,
             properties=properties,
+            game_id=game_id,
             status=status,
             _configuration=_configuration,
             **kwargs,

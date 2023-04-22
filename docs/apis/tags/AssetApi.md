@@ -5,14 +5,14 @@ All URIs are relative to *https://api-dev.l3vels.xyz*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**count_by_game**](#count_by_game) | **get** /v1/asset/count/{project_id} | Count assets
-[**get_asset_by_id**](#get_asset_by_id) | **get** /v1/asset/{project_id}/{id} | Retrieve asset by ID
+[**count_by_game**](#count_by_game) | **get** /v1/asset/count/{game_id} | Count assets
+[**get_asset_by_id**](#get_asset_by_id) | **get** /v1/asset/{game_id}/{id} | Retrieve asset by ID
 [**get_assets**](#get_assets) | **get** /v1/asset | Retrieve assets
 [**update_asset**](#update_asset) | **patch** /v1/asset/{id} | Update asset
 
 # **count_by_game**
 <a name="count_by_game"></a>
-> int, float count_by_game(authorizationproject_id)
+> int, float count_by_game(authorizationgame_id)
 
 Count assets
 
@@ -37,7 +37,7 @@ with l3vels.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     path_params = {
-        'project_id': "project_id_example",
+        'game_id': "game_id_example",
     }
     header_params = {
         'Authorization': "Authorization_example",
@@ -82,9 +82,9 @@ str,  | str,  |  |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-project_id | ProjectIdSchema | | 
+game_id | GameIdSchema | | 
 
-# ProjectIdSchema
+# GameIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
@@ -176,11 +176,11 @@ No authorization required
 
 # **get_asset_by_id**
 <a name="get_asset_by_id"></a>
-> Asset get_asset_by_id(authorizationidproject_id)
+> Asset get_asset_by_id(authorizationidgame_id)
 
 Retrieve asset by ID
 
-Retrieve asset by ID in specific game/project. Example: Find asset AK-47 in game Call of Duty
+Retrieve asset by ID in specific Game. Example: Find asset AK-47 in game Call of Duty
 
 ### Example
 
@@ -203,7 +203,7 @@ with l3vels.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     path_params = {
         'id': "9abd57ce-b11c-4828-ab6a-19f568a8081a",
-        'project_id': "556a2843-b302-4b9d-916c-cefcb5d66053",
+        'game_id': "556a2843-b302-4b9d-916c-cefcb5d66053",
     }
     header_params = {
         'Authorization': "Authorization_example",
@@ -249,7 +249,7 @@ str,  | str,  |  |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 id | IdSchema | | 
-project_id | ProjectIdSchema | | 
+game_id | GameIdSchema | | 
 
 # IdSchema
 
@@ -258,7 +258,7 @@ Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 str,  | str,  |  | 
 
-# ProjectIdSchema
+# GameIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
@@ -349,7 +349,7 @@ No authorization required
 
 # **get_assets**
 <a name="get_assets"></a>
-> AssetsResponseDto get_assets(authorizationproject_id)
+> AssetsResponse get_assets(authorizationgame_id)
 
 Retrieve assets
 
@@ -360,7 +360,7 @@ This API method retrieves a list of assets that match the specified filter crite
 ```python
 import l3vels
 from l3vels.apis.tags import asset_api
-from l3vels.model.assets_response_dto import AssetsResponseDto
+from l3vels.model.assets_response import AssetsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-dev.l3vels.xyz
 # See configuration.py for a list of all supported configuration parameters.
@@ -375,7 +375,7 @@ with l3vels.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     query_params = {
-        'project_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
+        'game_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
     }
     header_params = {
         'Authorization': "Authorization_example",
@@ -392,7 +392,7 @@ with l3vels.ApiClient(configuration) as api_client:
 
     # example passing only optional values
     query_params = {
-        'project_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
+        'game_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         'collection_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         'sort': "name",
         'order': "ASC",
@@ -429,7 +429,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-project_id | ProjectIdSchema | | 
+game_id | GameIdSchema | | 
 collection_id | CollectionIdSchema | | optional
 sort | SortSchema | | optional
 order | OrderSchema | | optional
@@ -438,7 +438,7 @@ limit | LimitSchema | | optional
 page | PageSchema | | optional
 
 
-# ProjectIdSchema
+# GameIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
@@ -525,7 +525,7 @@ headers | Unset | headers were not defined |
 # SchemaFor200ResponseBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**AssetsResponseDto**](../../models/AssetsResponseDto.md) |  | 
+[**AssetsResponse**](../../models/AssetsResponse.md) |  | 
 
 
 #### get_assets.ApiResponseFor400
@@ -585,7 +585,7 @@ No authorization required
 
 # **update_asset**
 <a name="update_asset"></a>
-> Asset update_asset(authorizationidupdate_asset_dto)
+> Asset update_asset(authorizationidupdate_asset_input)
 
 Update asset
 
@@ -597,7 +597,7 @@ Update asset by ID in specific collection. Example: Update asset AK-47 in collec
 import l3vels
 from l3vels.apis.tags import asset_api
 from l3vels.model.asset import Asset
-from l3vels.model.update_asset_dto import UpdateAssetDto
+from l3vels.model.update_asset_input import UpdateAssetInput
 from pprint import pprint
 # Defining the host is optional and defaults to https://api-dev.l3vels.xyz
 # See configuration.py for a list of all supported configuration parameters.
@@ -617,7 +617,7 @@ with l3vels.ApiClient(configuration) as api_client:
     header_params = {
         'Authorization': "Authorization_example",
     }
-    body = UpdateAssetDto(
+    body = UpdateAssetInput(
         name="AK-47",
         description="Assault rifle operated by gas pressure. Developed in the Soviet Union.",
         price=10,
@@ -625,7 +625,7 @@ with l3vels.ApiClient(configuration) as api_client:
         asset_url="https://example.com/ak47.png",
         custom_props=dict(),
         collection_id="353c69f6-76a6-4baa-b68b-852c1c531953",
-        project_id="353c69f6-76a6-4baa-b68b-852c1c531953",
+        game_id="353c69f6-76a6-4baa-b68b-852c1c531953",
     )
     try:
         # Update asset
@@ -656,7 +656,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**UpdateAssetDto**](../../models/UpdateAssetDto.md) |  | 
+[**UpdateAssetInput**](../../models/UpdateAssetInput.md) |  | 
 
 
 ### header_params

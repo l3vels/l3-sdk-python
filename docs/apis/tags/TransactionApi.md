@@ -5,13 +5,13 @@ All URIs are relative to *https://api-dev.l3vels.xyz*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**transaction_controller_transaction_by_id**](#transaction_controller_transaction_by_id) | **get** /v1/transaction/{project_id}/{id} | Retrieve Transaction by ID
-[**transaction_controller_transactions**](#transaction_controller_transactions) | **get** /v1/transaction | Retrieve transactions
+[**get_transaction_by_id**](#get_transaction_by_id) | **get** /v1/transaction/{game_id}/{id} | Retrieve Transaction by ID
+[**get_transactions**](#get_transactions) | **get** /v1/transaction | Retrieve transactions
 [**transaction_controller_webhook**](#transaction_controller_webhook) | **post** /v1/transaction/webhook | 
 
-# **transaction_controller_transaction_by_id**
-<a name="transaction_controller_transaction_by_id"></a>
-> Transaction transaction_controller_transaction_by_id(authorizationidproject_id)
+# **get_transaction_by_id**
+<a name="get_transaction_by_id"></a>
+> Transaction get_transaction_by_id(authorizationidgame_id)
 
 Retrieve Transaction by ID
 
@@ -38,20 +38,20 @@ with l3vels.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     path_params = {
         'id': "id_example",
-        'project_id': "project_id_example",
+        'game_id': "game_id_example",
     }
     header_params = {
         'Authorization': "Authorization_example",
     }
     try:
         # Retrieve Transaction by ID
-        api_response = api_instance.transaction_controller_transaction_by_id(
+        api_response = api_instance.get_transaction_by_id(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except l3vels.ApiException as e:
-        print("Exception when calling TransactionApi->transaction_controller_transaction_by_id: %s\n" % e)
+        print("Exception when calling TransactionApi->get_transaction_by_id: %s\n" % e)
 ```
 ### Parameters
 
@@ -84,7 +84,7 @@ str,  | str,  |  |
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 id | IdSchema | | 
-project_id | ProjectIdSchema | | 
+game_id | GameIdSchema | | 
 
 # IdSchema
 
@@ -93,7 +93,7 @@ Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 str,  | str,  |  | 
 
-# ProjectIdSchema
+# GameIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
@@ -105,16 +105,16 @@ str,  | str,  |  |
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | [ApiResponseFor200](#transaction_controller_transaction_by_id.ApiResponseFor200) | The transaction has been found.
-400 | [ApiResponseFor400](#transaction_controller_transaction_by_id.ApiResponseFor400) | Bad Request, The request was unacceptable, often due to missing a required parameter.
-401 | [ApiResponseFor401](#transaction_controller_transaction_by_id.ApiResponseFor401) | Unauthorized, No valid API key provided.
-404 | [ApiResponseFor404](#transaction_controller_transaction_by_id.ApiResponseFor404) | Not Found, The requested resource doesn&#x27;t exist.
-409 | [ApiResponseFor409](#transaction_controller_transaction_by_id.ApiResponseFor409) | Conflict, The request conflicts with another request (perhaps due to using the same idempotent key).
-429 | [ApiResponseFor429](#transaction_controller_transaction_by_id.ApiResponseFor429) | Too Many Requests, Too many requests hit the API too quickly. We recommend an exponential backoff of your requests.
-500 | [ApiResponseFor500](#transaction_controller_transaction_by_id.ApiResponseFor500) | Server Errors, Something went wrong on L3vels&#x27;s end.
-504 | [ApiResponseFor504](#transaction_controller_transaction_by_id.ApiResponseFor504) | Gateway Timeout, Your request took too long.
+200 | [ApiResponseFor200](#get_transaction_by_id.ApiResponseFor200) | The transaction has been found.
+400 | [ApiResponseFor400](#get_transaction_by_id.ApiResponseFor400) | Bad Request, The request was unacceptable, often due to missing a required parameter.
+401 | [ApiResponseFor401](#get_transaction_by_id.ApiResponseFor401) | Unauthorized, No valid API key provided.
+404 | [ApiResponseFor404](#get_transaction_by_id.ApiResponseFor404) | Not Found, The requested resource doesn&#x27;t exist.
+409 | [ApiResponseFor409](#get_transaction_by_id.ApiResponseFor409) | Conflict, The request conflicts with another request (perhaps due to using the same idempotent key).
+429 | [ApiResponseFor429](#get_transaction_by_id.ApiResponseFor429) | Too Many Requests, Too many requests hit the API too quickly. We recommend an exponential backoff of your requests.
+500 | [ApiResponseFor500](#get_transaction_by_id.ApiResponseFor500) | Server Errors, Something went wrong on L3vels&#x27;s end.
+504 | [ApiResponseFor504](#get_transaction_by_id.ApiResponseFor504) | Gateway Timeout, Your request took too long.
 
-#### transaction_controller_transaction_by_id.ApiResponseFor200
+#### get_transaction_by_id.ApiResponseFor200
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -127,49 +127,49 @@ Type | Description  | Notes
 [**Transaction**](../../models/Transaction.md) |  | 
 
 
-#### transaction_controller_transaction_by_id.ApiResponseFor400
+#### get_transaction_by_id.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### transaction_controller_transaction_by_id.ApiResponseFor401
+#### get_transaction_by_id.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### transaction_controller_transaction_by_id.ApiResponseFor404
+#### get_transaction_by_id.ApiResponseFor404
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### transaction_controller_transaction_by_id.ApiResponseFor409
+#### get_transaction_by_id.ApiResponseFor409
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### transaction_controller_transaction_by_id.ApiResponseFor429
+#### get_transaction_by_id.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### transaction_controller_transaction_by_id.ApiResponseFor500
+#### get_transaction_by_id.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### transaction_controller_transaction_by_id.ApiResponseFor504
+#### get_transaction_by_id.ApiResponseFor504
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -182,9 +182,9 @@ No authorization required
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
-# **transaction_controller_transactions**
-<a name="transaction_controller_transactions"></a>
-> Transaction transaction_controller_transactions(authorizationproject_id)
+# **get_transactions**
+<a name="get_transactions"></a>
+> Transaction get_transactions(authorizationgame_id)
 
 Retrieve transactions
 
@@ -210,24 +210,24 @@ with l3vels.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     query_params = {
-        'project_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
+        'game_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
     }
     header_params = {
         'Authorization': "Authorization_example",
     }
     try:
         # Retrieve transactions
-        api_response = api_instance.transaction_controller_transactions(
+        api_response = api_instance.get_transactions(
             query_params=query_params,
             header_params=header_params,
         )
         pprint(api_response)
     except l3vels.ApiException as e:
-        print("Exception when calling TransactionApi->transaction_controller_transactions: %s\n" % e)
+        print("Exception when calling TransactionApi->get_transactions: %s\n" % e)
 
     # example passing only optional values
     query_params = {
-        'project_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
+        'game_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         'collection_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         'player_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         'sort': "name",
@@ -241,13 +241,13 @@ with l3vels.ApiClient(configuration) as api_client:
     }
     try:
         # Retrieve transactions
-        api_response = api_instance.transaction_controller_transactions(
+        api_response = api_instance.get_transactions(
             query_params=query_params,
             header_params=header_params,
         )
         pprint(api_response)
     except l3vels.ApiException as e:
-        print("Exception when calling TransactionApi->transaction_controller_transactions: %s\n" % e)
+        print("Exception when calling TransactionApi->get_transactions: %s\n" % e)
 ```
 ### Parameters
 
@@ -265,7 +265,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-project_id | ProjectIdSchema | | 
+game_id | GameIdSchema | | 
 collection_id | CollectionIdSchema | | optional
 player_id | PlayerIdSchema | | optional
 sort | SortSchema | | optional
@@ -275,7 +275,7 @@ limit | LimitSchema | | optional
 page | PageSchema | | optional
 
 
-# ProjectIdSchema
+# GameIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
@@ -350,16 +350,16 @@ str,  | str,  |  |
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | [ApiResponseFor200](#transaction_controller_transactions.ApiResponseFor200) | The transactions has been found.
-400 | [ApiResponseFor400](#transaction_controller_transactions.ApiResponseFor400) | Bad Request, The request was unacceptable, often due to missing a required parameter.
-401 | [ApiResponseFor401](#transaction_controller_transactions.ApiResponseFor401) | Unauthorized, No valid API key provided.
-404 | [ApiResponseFor404](#transaction_controller_transactions.ApiResponseFor404) | Not Found, The requested resource doesn&#x27;t exist.
-409 | [ApiResponseFor409](#transaction_controller_transactions.ApiResponseFor409) | Conflict, The request conflicts with another request (perhaps due to using the same idempotent key).
-429 | [ApiResponseFor429](#transaction_controller_transactions.ApiResponseFor429) | Too Many Requests, Too many requests hit the API too quickly. We recommend an exponential backoff of your requests.
-500 | [ApiResponseFor500](#transaction_controller_transactions.ApiResponseFor500) | Server Errors, Something went wrong on L3vels&#x27;s end.
-504 | [ApiResponseFor504](#transaction_controller_transactions.ApiResponseFor504) | Gateway Timeout, Your request took too long.
+200 | [ApiResponseFor200](#get_transactions.ApiResponseFor200) | The transactions has been found.
+400 | [ApiResponseFor400](#get_transactions.ApiResponseFor400) | Bad Request, The request was unacceptable, often due to missing a required parameter.
+401 | [ApiResponseFor401](#get_transactions.ApiResponseFor401) | Unauthorized, No valid API key provided.
+404 | [ApiResponseFor404](#get_transactions.ApiResponseFor404) | Not Found, The requested resource doesn&#x27;t exist.
+409 | [ApiResponseFor409](#get_transactions.ApiResponseFor409) | Conflict, The request conflicts with another request (perhaps due to using the same idempotent key).
+429 | [ApiResponseFor429](#get_transactions.ApiResponseFor429) | Too Many Requests, Too many requests hit the API too quickly. We recommend an exponential backoff of your requests.
+500 | [ApiResponseFor500](#get_transactions.ApiResponseFor500) | Server Errors, Something went wrong on L3vels&#x27;s end.
+504 | [ApiResponseFor504](#get_transactions.ApiResponseFor504) | Gateway Timeout, Your request took too long.
 
-#### transaction_controller_transactions.ApiResponseFor200
+#### get_transactions.ApiResponseFor200
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -372,49 +372,49 @@ Type | Description  | Notes
 [**Transaction**](../../models/Transaction.md) |  | 
 
 
-#### transaction_controller_transactions.ApiResponseFor400
+#### get_transactions.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### transaction_controller_transactions.ApiResponseFor401
+#### get_transactions.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### transaction_controller_transactions.ApiResponseFor404
+#### get_transactions.ApiResponseFor404
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### transaction_controller_transactions.ApiResponseFor409
+#### get_transactions.ApiResponseFor409
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### transaction_controller_transactions.ApiResponseFor429
+#### get_transactions.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### transaction_controller_transactions.ApiResponseFor500
+#### get_transactions.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### transaction_controller_transactions.ApiResponseFor504
+#### get_transactions.ApiResponseFor504
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |

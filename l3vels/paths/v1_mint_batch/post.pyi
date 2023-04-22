@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from l3vels import schemas  # noqa: F401
 
-from l3vels.model.mint_batch_dto import MintBatchDto
+from l3vels.model.mint_batch_input import MintBatchInput
 
 # Header params
 AuthorizationSchema = schemas.StrSchema
@@ -54,10 +54,10 @@ request_header_authorization = api_client.HeaderParameter(
     required=True,
 )
 # body param
-SchemaForRequestBodyApplicationJson = MintBatchDto
+SchemaForRequestBodyApplicationJson = MintBatchInput
 
 
-request_body_mint_batch_dto = api_client.RequestBody(
+request_body_mint_batch_input = api_client.RequestBody(
     content={
         'application/json': api_client.MediaType(
             schema=SchemaForRequestBodyApplicationJson),
@@ -164,7 +164,7 @@ _response_for_504 = api_client.OpenApiResponse(
 
 class BaseApi(api_client.Api):
     @typing.overload
-    def _mint_controller_mint_batch_oapg(
+    def _mint_batch_asset_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: typing_extensions.Literal["application/json"] = ...,
@@ -177,7 +177,7 @@ class BaseApi(api_client.Api):
     ]: ...
 
     @typing.overload
-    def _mint_controller_mint_batch_oapg(
+    def _mint_batch_asset_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -191,7 +191,7 @@ class BaseApi(api_client.Api):
 
 
     @typing.overload
-    def _mint_controller_mint_batch_oapg(
+    def _mint_batch_asset_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         skip_deserialization: typing_extensions.Literal[True],
@@ -202,7 +202,7 @@ class BaseApi(api_client.Api):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def _mint_controller_mint_batch_oapg(
+    def _mint_batch_asset_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -215,7 +215,7 @@ class BaseApi(api_client.Api):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def _mint_controller_mint_batch_oapg(
+    def _mint_batch_asset_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = 'application/json',
@@ -249,7 +249,7 @@ class BaseApi(api_client.Api):
                 'The required body parameter has an invalid value of: unset. Set a valid value instead')
         _fields = None
         _body = None
-        serialized_data = request_body_mint_batch_dto.serialize(body, content_type)
+        serialized_data = request_body_mint_batch_input.serialize(body, content_type)
         _headers.add('Content-Type', content_type)
         if 'fields' in serialized_data:
             _fields = serialized_data['fields']
@@ -284,11 +284,11 @@ class BaseApi(api_client.Api):
         return api_response
 
 
-class MintControllerMintBatch(BaseApi):
+class MintBatchAsset(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     @typing.overload
-    def mint_controller_mint_batch(
+    def mint_batch_asset(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: typing_extensions.Literal["application/json"] = ...,
@@ -301,7 +301,7 @@ class MintControllerMintBatch(BaseApi):
     ]: ...
 
     @typing.overload
-    def mint_controller_mint_batch(
+    def mint_batch_asset(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -315,7 +315,7 @@ class MintControllerMintBatch(BaseApi):
 
 
     @typing.overload
-    def mint_controller_mint_batch(
+    def mint_batch_asset(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         skip_deserialization: typing_extensions.Literal[True],
@@ -326,7 +326,7 @@ class MintControllerMintBatch(BaseApi):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def mint_controller_mint_batch(
+    def mint_batch_asset(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -339,7 +339,7 @@ class MintControllerMintBatch(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def mint_controller_mint_batch(
+    def mint_batch_asset(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = 'application/json',
@@ -348,7 +348,7 @@ class MintControllerMintBatch(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._mint_controller_mint_batch_oapg(
+        return self._mint_batch_asset_oapg(
             body=body,
             header_params=header_params,
             content_type=content_type,
@@ -422,7 +422,7 @@ class ApiForpost(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._mint_controller_mint_batch_oapg(
+        return self._mint_batch_asset_oapg(
             body=body,
             header_params=header_params,
             content_type=content_type,

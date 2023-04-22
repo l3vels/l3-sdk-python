@@ -42,11 +42,11 @@ class PlayerAsset(
             "account_id",
             "player_id",
             "created_on",
-            "project_id",
             "modified_by",
             "asset_id",
             "id",
             "created_by",
+            "game_id",
         }
         
         class properties:
@@ -55,12 +55,12 @@ class PlayerAsset(
             player_id = schemas.StrSchema
             asset_id = schemas.StrSchema
             collection_id = schemas.StrSchema
-            account_id = schemas.NumberSchema
-            project_id = schemas.StrSchema
+            account_id = schemas.StrSchema
+            game_id = schemas.StrSchema
             created_on = schemas.DateTimeSchema
             modified_on = schemas.DateTimeSchema
-            created_by = schemas.NumberSchema
-            modified_by = schemas.NumberSchema
+            created_by = schemas.StrSchema
+            modified_by = schemas.StrSchema
             __annotations__ = {
                 "id": id,
                 "amount": amount,
@@ -68,7 +68,7 @@ class PlayerAsset(
                 "asset_id": asset_id,
                 "collection_id": collection_id,
                 "account_id": account_id,
-                "project_id": project_id,
+                "game_id": game_id,
                 "created_on": created_on,
                 "modified_on": modified_on,
                 "created_by": created_by,
@@ -81,11 +81,11 @@ class PlayerAsset(
     account_id: MetaOapg.properties.account_id
     player_id: MetaOapg.properties.player_id
     created_on: MetaOapg.properties.created_on
-    project_id: MetaOapg.properties.project_id
     modified_by: MetaOapg.properties.modified_by
     asset_id: MetaOapg.properties.asset_id
     id: MetaOapg.properties.id
     created_by: MetaOapg.properties.created_by
+    game_id: MetaOapg.properties.game_id
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
@@ -106,7 +106,7 @@ class PlayerAsset(
     def __getitem__(self, name: typing_extensions.Literal["account_id"]) -> MetaOapg.properties.account_id: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["project_id"]) -> MetaOapg.properties.project_id: ...
+    def __getitem__(self, name: typing_extensions.Literal["game_id"]) -> MetaOapg.properties.game_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["created_on"]) -> MetaOapg.properties.created_on: ...
@@ -123,7 +123,7 @@ class PlayerAsset(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "amount", "player_id", "asset_id", "collection_id", "account_id", "project_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "amount", "player_id", "asset_id", "collection_id", "account_id", "game_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -147,7 +147,7 @@ class PlayerAsset(
     def get_item_oapg(self, name: typing_extensions.Literal["account_id"]) -> MetaOapg.properties.account_id: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["project_id"]) -> MetaOapg.properties.project_id: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["game_id"]) -> MetaOapg.properties.game_id: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["created_on"]) -> MetaOapg.properties.created_on: ...
@@ -164,7 +164,7 @@ class PlayerAsset(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "amount", "player_id", "asset_id", "collection_id", "account_id", "project_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "amount", "player_id", "asset_id", "collection_id", "account_id", "game_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -174,14 +174,14 @@ class PlayerAsset(
         collection_id: typing.Union[MetaOapg.properties.collection_id, str, ],
         modified_on: typing.Union[MetaOapg.properties.modified_on, str, datetime, ],
         amount: typing.Union[MetaOapg.properties.amount, decimal.Decimal, int, float, ],
-        account_id: typing.Union[MetaOapg.properties.account_id, decimal.Decimal, int, float, ],
+        account_id: typing.Union[MetaOapg.properties.account_id, str, ],
         player_id: typing.Union[MetaOapg.properties.player_id, str, ],
         created_on: typing.Union[MetaOapg.properties.created_on, str, datetime, ],
-        project_id: typing.Union[MetaOapg.properties.project_id, str, ],
-        modified_by: typing.Union[MetaOapg.properties.modified_by, decimal.Decimal, int, float, ],
+        modified_by: typing.Union[MetaOapg.properties.modified_by, str, ],
         asset_id: typing.Union[MetaOapg.properties.asset_id, str, ],
         id: typing.Union[MetaOapg.properties.id, str, ],
-        created_by: typing.Union[MetaOapg.properties.created_by, decimal.Decimal, int, float, ],
+        created_by: typing.Union[MetaOapg.properties.created_by, str, ],
+        game_id: typing.Union[MetaOapg.properties.game_id, str, ],
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'PlayerAsset':
@@ -194,11 +194,11 @@ class PlayerAsset(
             account_id=account_id,
             player_id=player_id,
             created_on=created_on,
-            project_id=project_id,
             modified_by=modified_by,
             asset_id=asset_id,
             id=id,
             created_by=created_by,
+            game_id=game_id,
             _configuration=_configuration,
             **kwargs,
         )

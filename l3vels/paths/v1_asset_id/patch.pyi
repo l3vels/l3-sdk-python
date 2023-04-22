@@ -26,7 +26,7 @@ import frozendict  # noqa: F401
 from l3vels import schemas  # noqa: F401
 
 from l3vels.model.asset import Asset
-from l3vels.model.update_asset_dto import UpdateAssetDto
+from l3vels.model.update_asset_input import UpdateAssetInput
 
 # Header params
 AuthorizationSchema = schemas.StrSchema
@@ -81,10 +81,10 @@ request_path_id = api_client.PathParameter(
     required=True,
 )
 # body param
-SchemaForRequestBodyApplicationJson = UpdateAssetDto
+SchemaForRequestBodyApplicationJson = UpdateAssetInput
 
 
-request_body_update_asset_dto = api_client.RequestBody(
+request_body_update_asset_input = api_client.RequestBody(
     content={
         'application/json': api_client.MediaType(
             schema=SchemaForRequestBodyApplicationJson),
@@ -313,7 +313,7 @@ class BaseApi(api_client.Api):
                 'The required body parameter has an invalid value of: unset. Set a valid value instead')
         _fields = None
         _body = None
-        serialized_data = request_body_update_asset_dto.serialize(body, content_type)
+        serialized_data = request_body_update_asset_input.serialize(body, content_type)
         _headers.add('Content-Type', content_type)
         if 'fields' in serialized_data:
             _fields = serialized_data['fields']

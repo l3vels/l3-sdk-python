@@ -29,12 +29,12 @@ from . import path
 
 # Query params
 CollectionIdSchema = schemas.StrSchema
-ProjectIdSchema = schemas.StrSchema
+GameIdSchema = schemas.StrSchema
 RequestRequiredQueryParams = typing_extensions.TypedDict(
     'RequestRequiredQueryParams',
     {
         'collection_id': typing.Union[CollectionIdSchema, str, ],
-        'project_id': typing.Union[ProjectIdSchema, str, ],
+        'game_id': typing.Union[GameIdSchema, str, ],
     }
 )
 RequestOptionalQueryParams = typing_extensions.TypedDict(
@@ -56,10 +56,10 @@ request_query_collection_id = api_client.QueryParameter(
     required=True,
     explode=True,
 )
-request_query_project_id = api_client.QueryParameter(
-    name="project_id",
+request_query_game_id = api_client.QueryParameter(
+    name="game_id",
     style=api_client.ParameterStyle.FORM,
-    schema=ProjectIdSchema,
+    schema=GameIdSchema,
     required=True,
     explode=True,
 )
@@ -199,7 +199,7 @@ _status_code_to_response = {
 
 class BaseApi(api_client.Api):
     @typing.overload
-    def _contract_controller_collection_size_oapg(
+    def _count_contracts_by_game_id_oapg(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -211,7 +211,7 @@ class BaseApi(api_client.Api):
     ]: ...
 
     @typing.overload
-    def _contract_controller_collection_size_oapg(
+    def _count_contracts_by_game_id_oapg(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         query_params: RequestQueryParams = frozendict.frozendict(),
@@ -221,7 +221,7 @@ class BaseApi(api_client.Api):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def _contract_controller_collection_size_oapg(
+    def _count_contracts_by_game_id_oapg(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -233,7 +233,7 @@ class BaseApi(api_client.Api):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def _contract_controller_collection_size_oapg(
+    def _count_contracts_by_game_id_oapg(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -254,7 +254,7 @@ class BaseApi(api_client.Api):
         prefix_separator_iterator = None
         for parameter in (
             request_query_collection_id,
-            request_query_project_id,
+            request_query_game_id,
         ):
             parameter_data = query_params.get(parameter.name, schemas.unset)
             if parameter_data is schemas.unset:
@@ -303,11 +303,11 @@ class BaseApi(api_client.Api):
         return api_response
 
 
-class ContractControllerCollectionSize(BaseApi):
+class CountContractsByGameId(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     @typing.overload
-    def contract_controller_collection_size(
+    def count_contracts_by_game_id(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -319,7 +319,7 @@ class ContractControllerCollectionSize(BaseApi):
     ]: ...
 
     @typing.overload
-    def contract_controller_collection_size(
+    def count_contracts_by_game_id(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         query_params: RequestQueryParams = frozendict.frozendict(),
@@ -329,7 +329,7 @@ class ContractControllerCollectionSize(BaseApi):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def contract_controller_collection_size(
+    def count_contracts_by_game_id(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -341,7 +341,7 @@ class ContractControllerCollectionSize(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def contract_controller_collection_size(
+    def count_contracts_by_game_id(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -349,7 +349,7 @@ class ContractControllerCollectionSize(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._contract_controller_collection_size_oapg(
+        return self._count_contracts_by_game_id_oapg(
             query_params=query_params,
             header_params=header_params,
             stream=stream,
@@ -404,7 +404,7 @@ class ApiForget(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._contract_controller_collection_size_oapg(
+        return self._count_contracts_by_game_id_oapg(
             query_params=query_params,
             header_params=header_params,
             stream=stream,

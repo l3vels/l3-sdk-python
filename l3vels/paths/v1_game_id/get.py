@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from l3vels import schemas  # noqa: F401
 
-from l3vels.model.project import Project
+from l3vels.model.game import Game
 
 from . import path
 
@@ -81,7 +81,7 @@ request_path_id = api_client.PathParameter(
     schema=IdSchema,
     required=True,
 )
-SchemaFor200ResponseBodyApplicationJson = Project
+SchemaFor200ResponseBodyApplicationJson = Game
 
 
 @dataclass

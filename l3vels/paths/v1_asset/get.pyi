@@ -25,10 +25,10 @@ import frozendict  # noqa: F401
 
 from l3vels import schemas  # noqa: F401
 
-from l3vels.model.assets_response_dto import AssetsResponseDto
+from l3vels.model.assets_response import AssetsResponse
 
 # Query params
-ProjectIdSchema = schemas.StrSchema
+GameIdSchema = schemas.StrSchema
 CollectionIdSchema = schemas.StrSchema
 SortSchema = schemas.StrSchema
 
@@ -51,7 +51,7 @@ PageSchema = schemas.NumberSchema
 RequestRequiredQueryParams = typing_extensions.TypedDict(
     'RequestRequiredQueryParams',
     {
-        'project_id': typing.Union[ProjectIdSchema, str, ],
+        'game_id': typing.Union[GameIdSchema, str, ],
     }
 )
 RequestOptionalQueryParams = typing_extensions.TypedDict(
@@ -72,10 +72,10 @@ class RequestQueryParams(RequestRequiredQueryParams, RequestOptionalQueryParams)
     pass
 
 
-request_query_project_id = api_client.QueryParameter(
-    name="project_id",
+request_query_game_id = api_client.QueryParameter(
+    name="game_id",
     style=api_client.ParameterStyle.FORM,
-    schema=ProjectIdSchema,
+    schema=GameIdSchema,
     required=True,
     explode=True,
 )
@@ -141,7 +141,7 @@ request_header_authorization = api_client.HeaderParameter(
     schema=AuthorizationSchema,
     required=True,
 )
-SchemaFor200ResponseBodyApplicationJson = AssetsResponseDto
+SchemaFor200ResponseBodyApplicationJson = AssetsResponse
 
 
 @dataclass
@@ -309,7 +309,7 @@ class BaseApi(api_client.Api):
 
         prefix_separator_iterator = None
         for parameter in (
-            request_query_project_id,
+            request_query_game_id,
             request_query_collection_id,
             request_query_sort,
             request_query_order,

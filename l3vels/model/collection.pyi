@@ -49,13 +49,13 @@ class Collection(
             "medias",
             "account_id",
             "created_on",
-            "project_id",
             "modified_by",
             "name",
             "main_media",
             "custom_asset_props",
             "categories",
             "id",
+            "game_id",
             "status",
         }
         
@@ -119,12 +119,12 @@ class Collection(
             custom_asset_props = schemas.DictSchema
             categories = schemas.DictSchema
             status = schemas.StrSchema
-            account_id = schemas.NumberSchema
-            project_id = schemas.StrSchema
+            account_id = schemas.StrSchema
+            game_id = schemas.StrSchema
             created_on = schemas.DateTimeSchema
             modified_on = schemas.DateTimeSchema
-            created_by = schemas.NumberSchema
-            modified_by = schemas.NumberSchema
+            created_by = schemas.StrSchema
+            modified_by = schemas.StrSchema
             __annotations__ = {
                 "id": id,
                 "unique_id": unique_id,
@@ -142,7 +142,7 @@ class Collection(
                 "categories": categories,
                 "status": status,
                 "account_id": account_id,
-                "project_id": project_id,
+                "game_id": game_id,
                 "created_on": created_on,
                 "modified_on": modified_on,
                 "created_by": created_by,
@@ -162,13 +162,13 @@ class Collection(
     medias: MetaOapg.properties.medias
     account_id: MetaOapg.properties.account_id
     created_on: MetaOapg.properties.created_on
-    project_id: MetaOapg.properties.project_id
     modified_by: MetaOapg.properties.modified_by
     name: MetaOapg.properties.name
     main_media: MetaOapg.properties.main_media
     custom_asset_props: MetaOapg.properties.custom_asset_props
     categories: MetaOapg.properties.categories
     id: MetaOapg.properties.id
+    game_id: MetaOapg.properties.game_id
     status: MetaOapg.properties.status
     
     @typing.overload
@@ -220,7 +220,7 @@ class Collection(
     def __getitem__(self, name: typing_extensions.Literal["account_id"]) -> MetaOapg.properties.account_id: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["project_id"]) -> MetaOapg.properties.project_id: ...
+    def __getitem__(self, name: typing_extensions.Literal["game_id"]) -> MetaOapg.properties.game_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["created_on"]) -> MetaOapg.properties.created_on: ...
@@ -237,7 +237,7 @@ class Collection(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "unique_id", "name", "description", "logo_image", "medias", "main_media", "url", "web_link", "supply", "custom_property_props", "social_links", "custom_asset_props", "categories", "status", "account_id", "project_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "unique_id", "name", "description", "logo_image", "medias", "main_media", "url", "web_link", "supply", "custom_property_props", "social_links", "custom_asset_props", "categories", "status", "account_id", "game_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -291,7 +291,7 @@ class Collection(
     def get_item_oapg(self, name: typing_extensions.Literal["account_id"]) -> MetaOapg.properties.account_id: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["project_id"]) -> MetaOapg.properties.project_id: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["game_id"]) -> MetaOapg.properties.game_id: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["created_on"]) -> MetaOapg.properties.created_on: ...
@@ -308,7 +308,7 @@ class Collection(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "unique_id", "name", "description", "logo_image", "medias", "main_media", "url", "web_link", "supply", "custom_property_props", "social_links", "custom_asset_props", "categories", "status", "account_id", "project_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "unique_id", "name", "description", "logo_image", "medias", "main_media", "url", "web_link", "supply", "custom_property_props", "social_links", "custom_asset_props", "categories", "status", "account_id", "game_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -322,19 +322,19 @@ class Collection(
         description: typing.Union[MetaOapg.properties.description, str, ],
         logo_image: typing.Union[MetaOapg.properties.logo_image, str, ],
         web_link: typing.Union[MetaOapg.properties.web_link, str, ],
-        created_by: typing.Union[MetaOapg.properties.created_by, decimal.Decimal, int, float, ],
+        created_by: typing.Union[MetaOapg.properties.created_by, str, ],
         supply: typing.Union[MetaOapg.properties.supply, decimal.Decimal, int, float, ],
         url: typing.Union[MetaOapg.properties.url, str, ],
         medias: typing.Union[MetaOapg.properties.medias, list, tuple, ],
-        account_id: typing.Union[MetaOapg.properties.account_id, decimal.Decimal, int, float, ],
+        account_id: typing.Union[MetaOapg.properties.account_id, str, ],
         created_on: typing.Union[MetaOapg.properties.created_on, str, datetime, ],
-        project_id: typing.Union[MetaOapg.properties.project_id, str, ],
-        modified_by: typing.Union[MetaOapg.properties.modified_by, decimal.Decimal, int, float, ],
+        modified_by: typing.Union[MetaOapg.properties.modified_by, str, ],
         name: typing.Union[MetaOapg.properties.name, str, ],
         main_media: typing.Union[MetaOapg.properties.main_media, str, ],
         custom_asset_props: typing.Union[MetaOapg.properties.custom_asset_props, dict, frozendict.frozendict, ],
         categories: typing.Union[MetaOapg.properties.categories, dict, frozendict.frozendict, ],
         id: typing.Union[MetaOapg.properties.id, str, ],
+        game_id: typing.Union[MetaOapg.properties.game_id, str, ],
         status: typing.Union[MetaOapg.properties.status, str, ],
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
@@ -355,13 +355,13 @@ class Collection(
             medias=medias,
             account_id=account_id,
             created_on=created_on,
-            project_id=project_id,
             modified_by=modified_by,
             name=name,
             main_media=main_media,
             custom_asset_props=custom_asset_props,
             categories=categories,
             id=id,
+            game_id=game_id,
             status=status,
             _configuration=_configuration,
             **kwargs,

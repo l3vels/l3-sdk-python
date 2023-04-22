@@ -49,7 +49,6 @@ class Transaction(
             "account_id",
             "blockchain",
             "created_on",
-            "project_id",
             "modified_by",
             "from",
             "id",
@@ -57,6 +56,7 @@ class Transaction(
             "chain_name",
             "events",
             "transaction_hash",
+            "game_id",
             "status",
         }
         
@@ -98,13 +98,13 @@ class Transaction(
             
                 def __getitem__(self, i: int) -> MetaOapg.items:
                     return super().__getitem__(i)
-            project_id = schemas.StrSchema
+            game_id = schemas.StrSchema
             collection_id = schemas.StrSchema
-            account_id = schemas.NumberSchema
+            account_id = schemas.StrSchema
             created_on = schemas.DateTimeSchema
             modified_on = schemas.DateTimeSchema
-            created_by = schemas.NumberSchema
-            modified_by = schemas.NumberSchema
+            created_by = schemas.StrSchema
+            modified_by = schemas.StrSchema
             __annotations__ = {
                 "id": id,
                 "status": status,
@@ -121,7 +121,7 @@ class Transaction(
                 "type": type,
                 "method": method,
                 "events": events,
-                "project_id": project_id,
+                "game_id": game_id,
                 "collection_id": collection_id,
                 "account_id": account_id,
                 "created_on": created_on,
@@ -143,13 +143,13 @@ class Transaction(
     account_id: MetaOapg.properties.account_id
     blockchain: MetaOapg.properties.blockchain
     created_on: MetaOapg.properties.created_on
-    project_id: MetaOapg.properties.project_id
     modified_by: MetaOapg.properties.modified_by
     id: MetaOapg.properties.id
     to: MetaOapg.properties.to
     chain_name: MetaOapg.properties.chain_name
     events: MetaOapg.properties.events
     transaction_hash: MetaOapg.properties.transaction_hash
+    game_id: MetaOapg.properties.game_id
     status: MetaOapg.properties.status
     
     @typing.overload
@@ -198,7 +198,7 @@ class Transaction(
     def __getitem__(self, name: typing_extensions.Literal["events"]) -> MetaOapg.properties.events: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["project_id"]) -> MetaOapg.properties.project_id: ...
+    def __getitem__(self, name: typing_extensions.Literal["game_id"]) -> MetaOapg.properties.game_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["collection_id"]) -> MetaOapg.properties.collection_id: ...
@@ -221,7 +221,7 @@ class Transaction(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "status", "from", "to", "contract_id", "contract_address", "blockchain", "chain_name", "chain_id", "environment", "transaction_hash", "block_number", "type", "method", "events", "project_id", "collection_id", "account_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "status", "from", "to", "contract_id", "contract_address", "blockchain", "chain_name", "chain_id", "environment", "transaction_hash", "block_number", "type", "method", "events", "game_id", "collection_id", "account_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -272,7 +272,7 @@ class Transaction(
     def get_item_oapg(self, name: typing_extensions.Literal["events"]) -> MetaOapg.properties.events: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["project_id"]) -> MetaOapg.properties.project_id: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["game_id"]) -> MetaOapg.properties.game_id: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["collection_id"]) -> MetaOapg.properties.collection_id: ...
@@ -295,7 +295,7 @@ class Transaction(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "status", "from", "to", "contract_id", "contract_address", "blockchain", "chain_name", "chain_id", "environment", "transaction_hash", "block_number", "type", "method", "events", "project_id", "collection_id", "account_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "status", "from", "to", "contract_id", "contract_address", "blockchain", "chain_name", "chain_id", "environment", "transaction_hash", "block_number", "type", "method", "events", "game_id", "collection_id", "account_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -309,19 +309,19 @@ class Transaction(
         block_number: typing.Union[MetaOapg.properties.block_number, decimal.Decimal, int, float, ],
         contract_address: typing.Union[MetaOapg.properties.contract_address, str, ],
         type: typing.Union[MetaOapg.properties.type, str, ],
-        created_by: typing.Union[MetaOapg.properties.created_by, decimal.Decimal, int, float, ],
+        created_by: typing.Union[MetaOapg.properties.created_by, str, ],
         collection_id: typing.Union[MetaOapg.properties.collection_id, str, ],
         environment: typing.Union[MetaOapg.properties.environment, str, ],
-        account_id: typing.Union[MetaOapg.properties.account_id, decimal.Decimal, int, float, ],
+        account_id: typing.Union[MetaOapg.properties.account_id, str, ],
         blockchain: typing.Union[MetaOapg.properties.blockchain, str, ],
         created_on: typing.Union[MetaOapg.properties.created_on, str, datetime, ],
-        project_id: typing.Union[MetaOapg.properties.project_id, str, ],
-        modified_by: typing.Union[MetaOapg.properties.modified_by, decimal.Decimal, int, float, ],
+        modified_by: typing.Union[MetaOapg.properties.modified_by, str, ],
         id: typing.Union[MetaOapg.properties.id, str, ],
         to: typing.Union[MetaOapg.properties.to, str, ],
         chain_name: typing.Union[MetaOapg.properties.chain_name, str, ],
         events: typing.Union[MetaOapg.properties.events, list, tuple, ],
         transaction_hash: typing.Union[MetaOapg.properties.transaction_hash, str, ],
+        game_id: typing.Union[MetaOapg.properties.game_id, str, ],
         status: typing.Union[MetaOapg.properties.status, str, ],
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
@@ -342,13 +342,13 @@ class Transaction(
             account_id=account_id,
             blockchain=blockchain,
             created_on=created_on,
-            project_id=project_id,
             modified_by=modified_by,
             id=id,
             to=to,
             chain_name=chain_name,
             events=events,
             transaction_hash=transaction_hash,
+            game_id=game_id,
             status=status,
             _configuration=_configuration,
             **kwargs,

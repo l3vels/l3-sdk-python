@@ -44,12 +44,12 @@ class Player(
             "created_by",
             "account_id",
             "created_on",
-            "project_id",
             "modified_by",
             "name",
             "id",
             "custom_props",
             "email",
+            "game_id",
             "username",
         }
         
@@ -62,12 +62,12 @@ class Player(
             avatar = schemas.StrSchema
             custom_props = schemas.DictSchema
             last_seen = schemas.DateTimeSchema
-            account_id = schemas.NumberSchema
-            project_id = schemas.StrSchema
+            account_id = schemas.StrSchema
+            game_id = schemas.StrSchema
             created_on = schemas.DateTimeSchema
             modified_on = schemas.DateTimeSchema
-            created_by = schemas.NumberSchema
-            modified_by = schemas.NumberSchema
+            created_by = schemas.StrSchema
+            modified_by = schemas.StrSchema
             is_create_wallet = schemas.BoolSchema
             __annotations__ = {
                 "id": id,
@@ -79,7 +79,7 @@ class Player(
                 "custom_props": custom_props,
                 "last_seen": last_seen,
                 "account_id": account_id,
-                "project_id": project_id,
+                "game_id": game_id,
                 "created_on": created_on,
                 "modified_on": modified_on,
                 "created_by": created_by,
@@ -95,12 +95,12 @@ class Player(
     created_by: MetaOapg.properties.created_by
     account_id: MetaOapg.properties.account_id
     created_on: MetaOapg.properties.created_on
-    project_id: MetaOapg.properties.project_id
     modified_by: MetaOapg.properties.modified_by
     name: MetaOapg.properties.name
     id: MetaOapg.properties.id
     custom_props: MetaOapg.properties.custom_props
     email: MetaOapg.properties.email
+    game_id: MetaOapg.properties.game_id
     username: MetaOapg.properties.username
     
     @typing.overload
@@ -131,7 +131,7 @@ class Player(
     def __getitem__(self, name: typing_extensions.Literal["account_id"]) -> MetaOapg.properties.account_id: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["project_id"]) -> MetaOapg.properties.project_id: ...
+    def __getitem__(self, name: typing_extensions.Literal["game_id"]) -> MetaOapg.properties.game_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["created_on"]) -> MetaOapg.properties.created_on: ...
@@ -151,7 +151,7 @@ class Player(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "unique_id", "name", "username", "email", "avatar", "custom_props", "last_seen", "account_id", "project_id", "created_on", "modified_on", "created_by", "modified_by", "is_create_wallet", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "unique_id", "name", "username", "email", "avatar", "custom_props", "last_seen", "account_id", "game_id", "created_on", "modified_on", "created_by", "modified_by", "is_create_wallet", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -184,7 +184,7 @@ class Player(
     def get_item_oapg(self, name: typing_extensions.Literal["account_id"]) -> MetaOapg.properties.account_id: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["project_id"]) -> MetaOapg.properties.project_id: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["game_id"]) -> MetaOapg.properties.game_id: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["created_on"]) -> MetaOapg.properties.created_on: ...
@@ -204,7 +204,7 @@ class Player(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "unique_id", "name", "username", "email", "avatar", "custom_props", "last_seen", "account_id", "project_id", "created_on", "modified_on", "created_by", "modified_by", "is_create_wallet", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "unique_id", "name", "username", "email", "avatar", "custom_props", "last_seen", "account_id", "game_id", "created_on", "modified_on", "created_by", "modified_by", "is_create_wallet", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -216,15 +216,15 @@ class Player(
         last_seen: typing.Union[MetaOapg.properties.last_seen, str, datetime, ],
         avatar: typing.Union[MetaOapg.properties.avatar, str, ],
         is_create_wallet: typing.Union[MetaOapg.properties.is_create_wallet, bool, ],
-        created_by: typing.Union[MetaOapg.properties.created_by, decimal.Decimal, int, float, ],
-        account_id: typing.Union[MetaOapg.properties.account_id, decimal.Decimal, int, float, ],
+        created_by: typing.Union[MetaOapg.properties.created_by, str, ],
+        account_id: typing.Union[MetaOapg.properties.account_id, str, ],
         created_on: typing.Union[MetaOapg.properties.created_on, str, datetime, ],
-        project_id: typing.Union[MetaOapg.properties.project_id, str, ],
-        modified_by: typing.Union[MetaOapg.properties.modified_by, decimal.Decimal, int, float, ],
+        modified_by: typing.Union[MetaOapg.properties.modified_by, str, ],
         name: typing.Union[MetaOapg.properties.name, str, ],
         id: typing.Union[MetaOapg.properties.id, str, ],
         custom_props: typing.Union[MetaOapg.properties.custom_props, dict, frozendict.frozendict, ],
         email: typing.Union[MetaOapg.properties.email, str, ],
+        game_id: typing.Union[MetaOapg.properties.game_id, str, ],
         username: typing.Union[MetaOapg.properties.username, str, ],
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
@@ -240,12 +240,12 @@ class Player(
             created_by=created_by,
             account_id=account_id,
             created_on=created_on,
-            project_id=project_id,
             modified_by=modified_by,
             name=name,
             id=id,
             custom_props=custom_props,
             email=email,
+            game_id=game_id,
             username=username,
             _configuration=_configuration,
             **kwargs,
