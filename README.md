@@ -184,7 +184,7 @@ Class | Method | HTTP request | Description
 *ContractApi* | [**get_contract_uri**](docs/apis/tags/ContractApi.md#get_contract_uri) | **get** /v1/contract/contract-uri | Get Contract URI
 *ContractApi* | [**set_contract_uri**](docs/apis/tags/ContractApi.md#set_contract_uri) | **put** /v1/contract/contract-uri | Update Contract URI
 *ContractApi* | [**update_sale_status**](docs/apis/tags/ContractApi.md#update_sale_status) | **put** /v1/contract/sale-status | Update Sale status
-*GameApi* | [**get_game_by_id**](docs/apis/tags/GameApi.md#get_game_by_id) | **get** /v1/game/{id} | Retrieve Game
+*GameApi* | [**get_game_by_id**](docs/apis/tags/GameApi.md#get_game_by_id) | **get** /v1/game/{game_id} | Retrieve Game
 *MintApi* | [**airdrop_asset_to_player**](docs/apis/tags/MintApi.md#airdrop_asset_to_player) | **post** /v1/mint/airdrop | Airdrop asset to player
 *MintApi* | [**award_asset_to_player**](docs/apis/tags/MintApi.md#award_asset_to_player) | **post** /v1/mint/award | Award asset to player
 *MintApi* | [**batch_mint_asset_by_player**](docs/apis/tags/MintApi.md#batch_mint_asset_by_player) | **post** /v1/mint/batch-player | Batch mint assets by player

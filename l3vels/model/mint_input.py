@@ -80,14 +80,12 @@ class MintInput(
                         _configuration=_configuration,
                         **kwargs,
                     )
-            contract_id = schemas.StrSchema
             player_address = schemas.StrSchema
             player_id = schemas.StrSchema
             __annotations__ = {
                 "game_id": game_id,
                 "collection_id": collection_id,
                 "asset": asset,
-                "contract_id": contract_id,
                 "player_address": player_address,
                 "player_id": player_id,
             }
@@ -106,9 +104,6 @@ class MintInput(
     def __getitem__(self, name: typing_extensions.Literal["asset"]) -> MetaOapg.properties.asset: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["contract_id"]) -> MetaOapg.properties.contract_id: ...
-    
-    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["player_address"]) -> MetaOapg.properties.player_address: ...
     
     @typing.overload
@@ -117,7 +112,7 @@ class MintInput(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["game_id", "collection_id", "asset", "contract_id", "player_address", "player_id", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["game_id", "collection_id", "asset", "player_address", "player_id", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -132,9 +127,6 @@ class MintInput(
     def get_item_oapg(self, name: typing_extensions.Literal["asset"]) -> MetaOapg.properties.asset: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["contract_id"]) -> typing.Union[MetaOapg.properties.contract_id, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["player_address"]) -> typing.Union[MetaOapg.properties.player_address, schemas.Unset]: ...
     
     @typing.overload
@@ -143,7 +135,7 @@ class MintInput(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["game_id", "collection_id", "asset", "contract_id", "player_address", "player_id", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["game_id", "collection_id", "asset", "player_address", "player_id", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -153,7 +145,6 @@ class MintInput(
         collection_id: typing.Union[MetaOapg.properties.collection_id, str, ],
         asset: typing.Union[MetaOapg.properties.asset, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
         game_id: typing.Union[MetaOapg.properties.game_id, str, ],
-        contract_id: typing.Union[MetaOapg.properties.contract_id, str, schemas.Unset] = schemas.unset,
         player_address: typing.Union[MetaOapg.properties.player_address, str, schemas.Unset] = schemas.unset,
         player_id: typing.Union[MetaOapg.properties.player_id, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
@@ -165,7 +156,6 @@ class MintInput(
             collection_id=collection_id,
             asset=asset,
             game_id=game_id,
-            contract_id=contract_id,
             player_address=player_address,
             player_id=player_id,
             _configuration=_configuration,

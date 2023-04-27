@@ -5,11 +5,11 @@ All URIs are relative to *https://api-dev.l3vels.xyz*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_game_by_id**](#get_game_by_id) | **get** /v1/game/{id} | Retrieve Game
+[**get_game_by_id**](#get_game_by_id) | **get** /v1/game/{game_id} | Retrieve Game
 
 # **get_game_by_id**
 <a name="get_game_by_id"></a>
-> Game get_game_by_id(authorizationid)
+> Game get_game_by_id(authorizationgame_id)
 
 Retrieve Game
 
@@ -35,7 +35,7 @@ with l3vels.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     path_params = {
-        'id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
+        'game_id': "a44b646a-ae14-4e05-ae09-b12d5e7269bf",
     }
     header_params = {
         'Authorization': "Authorization_example",
@@ -80,9 +80,9 @@ str,  | str,  |  |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-id | IdSchema | | 
+game_id | GameIdSchema | | 
 
-# IdSchema
+# GameIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

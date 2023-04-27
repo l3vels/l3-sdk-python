@@ -43,7 +43,6 @@ with l3vels.ApiClient(configuration) as api_client:
         'Authorization': "Authorization_example",
     }
     body = MintInput(
-        contract_id="a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         game_id="a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         collection_id="a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         player_address="0x0000000000000000000000000000000000000000",
@@ -199,7 +198,6 @@ with l3vels.ApiClient(configuration) as api_client:
         'Authorization': "Authorization_example",
     }
     body = MintInput(
-        contract_id="a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         game_id="a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         collection_id="a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         player_address="0x0000000000000000000000000000000000000000",
@@ -512,7 +510,6 @@ with l3vels.ApiClient(configuration) as api_client:
         'Authorization': "Authorization_example",
     }
     body = MintInput(
-        contract_id="a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         game_id="a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         collection_id="a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         player_address="0x0000000000000000000000000000000000000000",
@@ -668,7 +665,6 @@ with l3vels.ApiClient(configuration) as api_client:
         'Authorization': "Authorization_example",
     }
     body = MintInput(
-        contract_id="a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         game_id="a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         collection_id="a44b646a-ae14-4e05-ae09-b12d5e7269bf",
         player_address="0x0000000000000000000000000000000000000000",
