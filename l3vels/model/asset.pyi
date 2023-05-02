@@ -37,6 +37,7 @@ class Asset(
     class MetaOapg:
         required = {
             "modified_on",
+            "achievements",
             "minted_amount",
             "description",
             "asset_url",
@@ -56,6 +57,7 @@ class Asset(
             "attributes",
             "id",
             "properties",
+            "rewards",
             "game_id",
             "status",
         }
@@ -65,8 +67,54 @@ class Asset(
             token_id = schemas.NumberSchema
             name = schemas.StrSchema
             parent_id = schemas.StrSchema
-            properties = schemas.DictSchema
+            properties = schemas.StrSchema
             attributes = schemas.DictSchema
+            
+            
+            class achievements(
+                schemas.ListSchema
+            ):
+            
+            
+                class MetaOapg:
+                    items = schemas.StrSchema
+            
+                def __new__(
+                    cls,
+                    _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'achievements':
+                    return super().__new__(
+                        cls,
+                        _arg,
+                        _configuration=_configuration,
+                    )
+            
+                def __getitem__(self, i: int) -> MetaOapg.items:
+                    return super().__getitem__(i)
+            
+            
+            class rewards(
+                schemas.ListSchema
+            ):
+            
+            
+                class MetaOapg:
+                    items = schemas.StrSchema
+            
+                def __new__(
+                    cls,
+                    _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'rewards':
+                    return super().__new__(
+                        cls,
+                        _arg,
+                        _configuration=_configuration,
+                    )
+            
+                def __getitem__(self, i: int) -> MetaOapg.items:
+                    return super().__getitem__(i)
             description = schemas.StrSchema
             status = schemas.StrSchema
             price = schemas.NumberSchema
@@ -112,6 +160,8 @@ class Asset(
                 "parent_id": parent_id,
                 "properties": properties,
                 "attributes": attributes,
+                "achievements": achievements,
+                "rewards": rewards,
                 "description": description,
                 "status": status,
                 "price": price,
@@ -131,6 +181,7 @@ class Asset(
             }
     
     modified_on: MetaOapg.properties.modified_on
+    achievements: MetaOapg.properties.achievements
     minted_amount: MetaOapg.properties.minted_amount
     description: MetaOapg.properties.description
     asset_url: MetaOapg.properties.asset_url
@@ -150,6 +201,7 @@ class Asset(
     attributes: MetaOapg.properties.attributes
     id: MetaOapg.properties.id
     properties: MetaOapg.properties.properties
+    rewards: MetaOapg.properties.rewards
     game_id: MetaOapg.properties.game_id
     status: MetaOapg.properties.status
     
@@ -170,6 +222,12 @@ class Asset(
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["attributes"]) -> MetaOapg.properties.attributes: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["achievements"]) -> MetaOapg.properties.achievements: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["rewards"]) -> MetaOapg.properties.rewards: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["description"]) -> MetaOapg.properties.description: ...
@@ -222,7 +280,7 @@ class Asset(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "token_id", "name", "parent_id", "properties", "attributes", "description", "status", "price", "supply", "minted_amount", "asset_type", "asset_url", "medias", "main_media", "account_id", "game_id", "collection_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "token_id", "name", "parent_id", "properties", "attributes", "achievements", "rewards", "description", "status", "price", "supply", "minted_amount", "asset_type", "asset_url", "medias", "main_media", "account_id", "game_id", "collection_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -244,6 +302,12 @@ class Asset(
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["attributes"]) -> MetaOapg.properties.attributes: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["achievements"]) -> MetaOapg.properties.achievements: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["rewards"]) -> MetaOapg.properties.rewards: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["description"]) -> MetaOapg.properties.description: ...
@@ -296,7 +360,7 @@ class Asset(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "token_id", "name", "parent_id", "properties", "attributes", "description", "status", "price", "supply", "minted_amount", "asset_type", "asset_url", "medias", "main_media", "account_id", "game_id", "collection_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "token_id", "name", "parent_id", "properties", "attributes", "achievements", "rewards", "description", "status", "price", "supply", "minted_amount", "asset_type", "asset_url", "medias", "main_media", "account_id", "game_id", "collection_id", "created_on", "modified_on", "created_by", "modified_by", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -304,6 +368,7 @@ class Asset(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
         modified_on: typing.Union[MetaOapg.properties.modified_on, str, datetime, ],
+        achievements: typing.Union[MetaOapg.properties.achievements, list, tuple, ],
         minted_amount: typing.Union[MetaOapg.properties.minted_amount, decimal.Decimal, int, float, ],
         description: typing.Union[MetaOapg.properties.description, str, ],
         asset_url: typing.Union[MetaOapg.properties.asset_url, str, ],
@@ -322,7 +387,8 @@ class Asset(
         main_media: typing.Union[MetaOapg.properties.main_media, str, ],
         attributes: typing.Union[MetaOapg.properties.attributes, dict, frozendict.frozendict, ],
         id: typing.Union[MetaOapg.properties.id, str, ],
-        properties: typing.Union[MetaOapg.properties.properties, dict, frozendict.frozendict, ],
+        properties: typing.Union[MetaOapg.properties.properties, str, ],
+        rewards: typing.Union[MetaOapg.properties.rewards, list, tuple, ],
         game_id: typing.Union[MetaOapg.properties.game_id, str, ],
         status: typing.Union[MetaOapg.properties.status, str, ],
         _configuration: typing.Optional[schemas.Configuration] = None,
@@ -332,6 +398,7 @@ class Asset(
             cls,
             *_args,
             modified_on=modified_on,
+            achievements=achievements,
             minted_amount=minted_amount,
             description=description,
             asset_url=asset_url,
@@ -351,6 +418,7 @@ class Asset(
             attributes=attributes,
             id=id,
             properties=properties,
+            rewards=rewards,
             game_id=game_id,
             status=status,
             _configuration=_configuration,

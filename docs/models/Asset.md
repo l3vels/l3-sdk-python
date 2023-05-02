@@ -9,6 +9,7 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
 **modified_on** | str, datetime,  | str,  | The date when the collection was last modified. | value must conform to RFC-3339 date-time
+**[achievements](#achievements)** | list, tuple,  | tuple,  | Achievements of the asset. | 
 **minted_amount** | decimal.Decimal, int, float,  | decimal.Decimal,  | The minted amount of the asset. | 
 **description** | str,  | str,  | The description of the asset. | 
 **asset_url** | str,  | str,  | The asset URL. | 
@@ -27,19 +28,11 @@ Key | Input Type | Accessed Type | Description | Notes
 **main_media** | str,  | str,  | The main or featured image associated with the asset. You can set it from the Dashboard as main image. | 
 **[attributes](#attributes)** | dict, frozendict.frozendict,  | frozendict.frozendict,  | Custom attributes of the asset. | 
 **id** | str,  | str,  | The unique identifier for the asset entity. | 
-**[properties](#properties)** | dict, frozendict.frozendict,  | frozendict.frozendict,  | Custom properties of the asset. | 
+**properties** | str,  | str,  | Custom properties of the asset. | 
+**[rewards](#rewards)** | list, tuple,  | tuple,  | Rewards of the asset. | 
 **game_id** | str,  | str,  | The unique identifier of the game that the asset is associated with. This allows developers to organize their assets by game and helps with tracking and reporting. | 
 **status** | str,  | str,  | The status of the asset. | 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
-
-# properties
-
-Custom properties of the asset.
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-dict, frozendict.frozendict,  | frozendict.frozendict,  | Custom properties of the asset. | 
 
 # attributes
 
@@ -49,6 +42,34 @@ Custom attributes of the asset.
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 dict, frozendict.frozendict,  | frozendict.frozendict,  | Custom attributes of the asset. | 
+
+# achievements
+
+Achievements of the asset.
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+list, tuple,  | tuple,  | Achievements of the asset. | 
+
+### Tuple Items
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+items | str,  | str,  |  | 
+
+# rewards
+
+Rewards of the asset.
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+list, tuple,  | tuple,  | Rewards of the asset. | 
+
+### Tuple Items
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+items | str,  | str,  |  | 
 
 # medias
 
