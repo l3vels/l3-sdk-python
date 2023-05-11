@@ -67,7 +67,29 @@ class Asset(
             token_id = schemas.NumberSchema
             name = schemas.StrSchema
             parent_id = schemas.StrSchema
-            properties = schemas.StrSchema
+            
+            
+            class properties(
+                schemas.ListSchema
+            ):
+            
+            
+                class MetaOapg:
+                    items = schemas.StrSchema
+            
+                def __new__(
+                    cls,
+                    _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'properties':
+                    return super().__new__(
+                        cls,
+                        _arg,
+                        _configuration=_configuration,
+                    )
+            
+                def __getitem__(self, i: int) -> MetaOapg.items:
+                    return super().__getitem__(i)
             attributes = schemas.DictSchema
             
             
@@ -387,7 +409,7 @@ class Asset(
         main_media: typing.Union[MetaOapg.properties.main_media, str, ],
         attributes: typing.Union[MetaOapg.properties.attributes, dict, frozendict.frozendict, ],
         id: typing.Union[MetaOapg.properties.id, str, ],
-        properties: typing.Union[MetaOapg.properties.properties, str, ],
+        properties: typing.Union[MetaOapg.properties.properties, list, tuple, ],
         rewards: typing.Union[MetaOapg.properties.rewards, list, tuple, ],
         game_id: typing.Union[MetaOapg.properties.game_id, str, ],
         status: typing.Union[MetaOapg.properties.status, str, ],

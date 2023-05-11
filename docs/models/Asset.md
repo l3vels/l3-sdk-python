@@ -28,11 +28,25 @@ Key | Input Type | Accessed Type | Description | Notes
 **main_media** | str,  | str,  | The main or featured image associated with the asset. You can set it from the Dashboard as main image. | 
 **[attributes](#attributes)** | dict, frozendict.frozendict,  | frozendict.frozendict,  | Custom attributes of the asset. | 
 **id** | str,  | str,  | The unique identifier for the asset entity. | 
-**properties** | str,  | str,  | Custom properties of the asset. | 
+**[properties](#properties)** | list, tuple,  | tuple,  | Custom properties of the asset. | 
 **[rewards](#rewards)** | list, tuple,  | tuple,  | Rewards of the asset. | 
 **game_id** | str,  | str,  | The unique identifier of the game that the asset is associated with. This allows developers to organize their assets by game and helps with tracking and reporting. | 
 **status** | str,  | str,  | The status of the asset. | 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
+
+# properties
+
+Custom properties of the asset.
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+list, tuple,  | tuple,  | Custom properties of the asset. | 
+
+### Tuple Items
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+items | str,  | str,  |  | 
 
 # attributes
 
