@@ -17,7 +17,6 @@ class PathValues(str, enum.Enum):
     V1_PLAYER_GAME_ID_ID = "/v1/player/{game_id}/{id}"
     V1_PLAYER = "/v1/player"
     V1_PLAYER_COUNT_GAME_ID = "/v1/player/count/{game_id}"
-    V1_TRANSACTION_WEBHOOK = "/v1/transaction/webhook"
     V1_TRANSACTION = "/v1/transaction"
     V1_TRANSACTION_GAME_ID_ID = "/v1/transaction/{game_id}/{id}"
     V1_ASSET = "/v1/asset"

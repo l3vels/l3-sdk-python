@@ -12,7 +12,6 @@ from l3vels.apis.paths.v1_collection_game_id_id import V1CollectionGameIdId
 from l3vels.apis.paths.v1_player_game_id_id import V1PlayerGameIdId
 from l3vels.apis.paths.v1_player import V1Player
 from l3vels.apis.paths.v1_player_count_game_id import V1PlayerCountGameId
-from l3vels.apis.paths.v1_transaction_webhook import V1TransactionWebhook
 from l3vels.apis.paths.v1_transaction import V1Transaction
 from l3vels.apis.paths.v1_transaction_game_id_id import V1TransactionGameIdId
 from l3vels.apis.paths.v1_asset import V1Asset
@@ -42,7 +41,6 @@ PathToApi = typing_extensions.TypedDict(
         PathValues.V1_PLAYER_GAME_ID_ID: V1PlayerGameIdId,
         PathValues.V1_PLAYER: V1Player,
         PathValues.V1_PLAYER_COUNT_GAME_ID: V1PlayerCountGameId,
-        PathValues.V1_TRANSACTION_WEBHOOK: V1TransactionWebhook,
         PathValues.V1_TRANSACTION: V1Transaction,
         PathValues.V1_TRANSACTION_GAME_ID_ID: V1TransactionGameIdId,
         PathValues.V1_ASSET: V1Asset,
@@ -73,7 +71,6 @@ path_to_api = PathToApi(
         PathValues.V1_PLAYER_GAME_ID_ID: V1PlayerGameIdId,
         PathValues.V1_PLAYER: V1Player,
         PathValues.V1_PLAYER_COUNT_GAME_ID: V1PlayerCountGameId,
-        PathValues.V1_TRANSACTION_WEBHOOK: V1TransactionWebhook,
         PathValues.V1_TRANSACTION: V1Transaction,
         PathValues.V1_TRANSACTION_GAME_ID_ID: V1TransactionGameIdId,
         PathValues.V1_ASSET: V1Asset,

@@ -200,7 +200,6 @@ Class | Method | HTTP request | Description
 *PlayerApi* | [**update_player**](docs/apis/tags/PlayerApi.md#update_player) | **put** /v1/player | Update an existing Player
 *TransactionApi* | [**get_transaction_by_id**](docs/apis/tags/TransactionApi.md#get_transaction_by_id) | **get** /v1/transaction/{game_id}/{id} | Retrieve Transaction by ID
 *TransactionApi* | [**get_transactions**](docs/apis/tags/TransactionApi.md#get_transactions) | **get** /v1/transaction | Retrieve transactions
-*TransactionApi* | [**transaction_controller_webhook**](docs/apis/tags/TransactionApi.md#transaction_controller_webhook) | **post** /v1/transaction/webhook | 
 *UtilitiesApi* | [**utility_controller_health**](docs/apis/tags/UtilitiesApi.md#utility_controller_health) | **get** /v1/utilities/health | 
 
 ## Documentation For Models
