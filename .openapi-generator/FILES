@@ -5,6 +5,7 @@ README.md
 docs/apis/tags/AssetApi.md
 docs/apis/tags/CollectionApi.md
 docs/apis/tags/ContractApi.md
+docs/apis/tags/DefaultApi.md
 docs/apis/tags/GameApi.md
 docs/apis/tags/MintApi.md
 docs/apis/tags/PlayerApi.md
@@ -31,6 +32,7 @@ l3vels/apis/__init__.py
 l3vels/apis/tags/asset_api.py
 l3vels/apis/tags/collection_api.py
 l3vels/apis/tags/contract_api.py
+l3vels/apis/tags/default_api.py
 l3vels/apis/tags/game_api.py
 l3vels/apis/tags/mint_api.py
 l3vels/apis/tags/player_api.py

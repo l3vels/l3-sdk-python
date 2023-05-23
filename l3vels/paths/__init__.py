@@ -31,3 +31,4 @@ class PathValues(str, enum.Enum):
     V1_MINT_AIRDROP = "/v1/mint/airdrop"
     V1_MINT_PLAYER = "/v1/mint/player"
     V1_MINT_BATCHPLAYER = "/v1/mint/batch-player"
+    V1_CHAT_WEBHOOK = "/v1/chat/webhook"

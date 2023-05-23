@@ -15,3 +15,4 @@ class TagValues(str, enum.Enum):
     PLAYER = "Player"
     TRANSACTION = "Transaction"
     UTILITIES = "Utilities"
+    DEFAULT = "default"

@@ -26,6 +26,7 @@ from l3vels.apis.paths.v1_mint_award import V1MintAward
 from l3vels.apis.paths.v1_mint_airdrop import V1MintAirdrop
 from l3vels.apis.paths.v1_mint_player import V1MintPlayer
 from l3vels.apis.paths.v1_mint_batch_player import V1MintBatchPlayer
+from l3vels.apis.paths.v1_chat_webhook import V1ChatWebhook
 
 PathToApi = typing_extensions.TypedDict(
     'PathToApi',
@@ -55,6 +56,7 @@ PathToApi = typing_extensions.TypedDict(
         PathValues.V1_MINT_AIRDROP: V1MintAirdrop,
         PathValues.V1_MINT_PLAYER: V1MintPlayer,
         PathValues.V1_MINT_BATCHPLAYER: V1MintBatchPlayer,
+        PathValues.V1_CHAT_WEBHOOK: V1ChatWebhook,
     }
 )
 
@@ -85,5 +87,6 @@ path_to_api = PathToApi(
         PathValues.V1_MINT_AIRDROP: V1MintAirdrop,
         PathValues.V1_MINT_PLAYER: V1MintPlayer,
         PathValues.V1_MINT_BATCHPLAYER: V1MintBatchPlayer,
+        PathValues.V1_CHAT_WEBHOOK: V1ChatWebhook,
     }
 )

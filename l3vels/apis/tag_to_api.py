@@ -10,6 +10,7 @@ from l3vels.apis.tags.mint_api import MintApi
 from l3vels.apis.tags.player_api import PlayerApi
 from l3vels.apis.tags.transaction_api import TransactionApi
 from l3vels.apis.tags.utilities_api import UtilitiesApi
+from l3vels.apis.tags.default_api import DefaultApi
 
 TagToApi = typing_extensions.TypedDict(
     'TagToApi',
@@ -23,6 +24,7 @@ TagToApi = typing_extensions.TypedDict(
         TagValues.PLAYER: PlayerApi,
         TagValues.TRANSACTION: TransactionApi,
         TagValues.UTILITIES: UtilitiesApi,
+        TagValues.DEFAULT: DefaultApi,
     }
 )
 
@@ -37,5 +39,6 @@ tag_to_api = TagToApi(
         TagValues.PLAYER: PlayerApi,
         TagValues.TRANSACTION: TransactionApi,
         TagValues.UTILITIES: UtilitiesApi,
+        TagValues.DEFAULT: DefaultApi,
     }
 )

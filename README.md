@@ -201,6 +201,7 @@ Class | Method | HTTP request | Description
 *TransactionApi* | [**get_transaction_by_id**](docs/apis/tags/TransactionApi.md#get_transaction_by_id) | **get** /v1/transaction/{game_id}/{id} | Retrieve Transaction by ID
 *TransactionApi* | [**get_transactions**](docs/apis/tags/TransactionApi.md#get_transactions) | **get** /v1/transaction | Retrieve transactions
 *UtilitiesApi* | [**utility_controller_health**](docs/apis/tags/UtilitiesApi.md#utility_controller_health) | **get** /v1/utilities/health | 
+*DefaultApi* | [**chat_controller_webhook**](docs/apis/tags/DefaultApi.md#chat_controller_webhook) | **post** /v1/chat/webhook | 
 
 ## Documentation For Models
 
@@ -231,6 +232,7 @@ Class | Method | HTTP request | Description
 
 ## Author
 
+support@l3vels.xyz
 support@l3vels.xyz
 support@l3vels.xyz
 support@l3vels.xyz
