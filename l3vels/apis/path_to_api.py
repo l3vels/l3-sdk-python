@@ -3,6 +3,7 @@ import typing_extensions
 from l3vels.paths import PathValues
 from l3vels.apis.paths.v1_utilities_health import V1UtilitiesHealth
 from l3vels.apis.paths.v1_game_game_id import V1GameGameId
+from l3vels.apis.paths.v1_game import V1Game
 from l3vels.apis.paths.v1_contract_collection_size import V1ContractCollectionSize
 from l3vels.apis.paths.v1_contract_contract_uri import V1ContractContractUri
 from l3vels.apis.paths.v1_contract_sale_status import V1ContractSaleStatus
@@ -33,6 +34,7 @@ PathToApi = typing_extensions.TypedDict(
     {
         PathValues.V1_UTILITIES_HEALTH: V1UtilitiesHealth,
         PathValues.V1_GAME_GAME_ID: V1GameGameId,
+        PathValues.V1_GAME: V1Game,
         PathValues.V1_CONTRACT_COLLECTIONSIZE: V1ContractCollectionSize,
         PathValues.V1_CONTRACT_CONTRACTURI: V1ContractContractUri,
         PathValues.V1_CONTRACT_SALESTATUS: V1ContractSaleStatus,
@@ -64,6 +66,7 @@ path_to_api = PathToApi(
     {
         PathValues.V1_UTILITIES_HEALTH: V1UtilitiesHealth,
         PathValues.V1_GAME_GAME_ID: V1GameGameId,
+        PathValues.V1_GAME: V1Game,
         PathValues.V1_CONTRACT_COLLECTIONSIZE: V1ContractCollectionSize,
         PathValues.V1_CONTRACT_CONTRACTURI: V1ContractContractUri,
         PathValues.V1_CONTRACT_SALESTATUS: V1ContractSaleStatus,

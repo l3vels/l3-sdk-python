@@ -8,6 +8,7 @@ import enum
 class PathValues(str, enum.Enum):
     V1_UTILITIES_HEALTH = "/v1/utilities/health"
     V1_GAME_GAME_ID = "/v1/game/{game_id}"
+    V1_GAME = "/v1/game"
     V1_CONTRACT_COLLECTIONSIZE = "/v1/contract/collection-size"
     V1_CONTRACT_CONTRACTURI = "/v1/contract/contract-uri"
     V1_CONTRACT_SALESTATUS = "/v1/contract/sale-status"
