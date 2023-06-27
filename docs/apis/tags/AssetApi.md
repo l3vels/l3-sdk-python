@@ -6,6 +6,7 @@ All URIs are relative to *https://api-dev.l3vels.xyz*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**count_by_game**](#count_by_game) | **get** /v1/asset/count/{game_id} | Count assets
+[**create_asset**](#create_asset) | **post** /v1/asset | Create asset 
 [**get_asset_by_id**](#get_asset_by_id) | **get** /v1/asset/{game_id}/{id} | Retrieve asset by ID
 [**get_assets**](#get_assets) | **get** /v1/asset | Retrieve assets
 [**update_asset**](#update_asset) | **patch** /v1/asset/{id} | Update asset
@@ -162,6 +163,164 @@ body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
 #### count_by_game.ApiResponseFor504
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+### Authorization
+
+No authorization required
+
+[[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
+
+# **create_asset**
+<a name="create_asset"></a>
+> Asset create_asset(authorizationbody)
+
+Create asset 
+
+Create asset in specific collection. Example: Create asset AK-47 in collection Weapons
+
+### Example
+
+```python
+import l3vels
+from l3vels.apis.tags import asset_api
+from l3vels.model.asset import Asset
+from pprint import pprint
+# Defining the host is optional and defaults to https://api-dev.l3vels.xyz
+# See configuration.py for a list of all supported configuration parameters.
+configuration = l3vels.Configuration(
+    host = "https://api-dev.l3vels.xyz"
+)
+
+# Enter a context with an instance of the API client
+with l3vels.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = asset_api.AssetApi(api_client)
+
+    # example passing only required values which don't have defaults set
+    header_params = {
+        'Authorization': "Authorization_example",
+    }
+    body = dict()
+    try:
+        # Create asset 
+        api_response = api_instance.create_asset(
+            header_params=header_params,
+            body=body,
+        )
+        pprint(api_response)
+    except l3vels.ApiException as e:
+        print("Exception when calling AssetApi->create_asset: %s\n" % e)
+```
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
+header_params | RequestHeaderParams | |
+content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
+accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
+stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
+timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
+skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+
+### body
+
+# SchemaForRequestBodyApplicationJson
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+### header_params
+#### RequestHeaderParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+Authorization | AuthorizationSchema | | 
+
+# AuthorizationSchema
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+str,  | str,  |  | 
+
+### Return Types, Responses
+
+Code | Class | Description
+------------- | ------------- | -------------
+n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
+200 | [ApiResponseFor200](#create_asset.ApiResponseFor200) | The asset has been created.
+400 | [ApiResponseFor400](#create_asset.ApiResponseFor400) | Bad Request, The request was unacceptable, often due to missing a required parameter.
+401 | [ApiResponseFor401](#create_asset.ApiResponseFor401) | Unauthorized, No valid API key provided.
+404 | [ApiResponseFor404](#create_asset.ApiResponseFor404) | Not Found, The requested resource doesn&#x27;t exist.
+409 | [ApiResponseFor409](#create_asset.ApiResponseFor409) | Conflict, The request conflicts with another request (perhaps due to using the same idempotent key).
+429 | [ApiResponseFor429](#create_asset.ApiResponseFor429) | Too Many Requests, Too many requests hit the API too quickly. We recommend an exponential backoff of your requests.
+500 | [ApiResponseFor500](#create_asset.ApiResponseFor500) | Server Errors, Something went wrong on L3vels&#x27;s end.
+504 | [ApiResponseFor504](#create_asset.ApiResponseFor504) | Gateway Timeout, Your request took too long.
+
+#### create_asset.ApiResponseFor200
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+# SchemaFor200ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**Asset**](../../models/Asset.md) |  | 
+
+
+#### create_asset.ApiResponseFor400
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### create_asset.ApiResponseFor401
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### create_asset.ApiResponseFor404
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### create_asset.ApiResponseFor409
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### create_asset.ApiResponseFor429
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### create_asset.ApiResponseFor500
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### create_asset.ApiResponseFor504
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |

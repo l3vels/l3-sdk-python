@@ -174,6 +174,7 @@ All URIs are relative to *https://api-dev.l3vels.xyz*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AssetApi* | [**count_by_game**](docs/apis/tags/AssetApi.md#count_by_game) | **get** /v1/asset/count/{game_id} | Count assets
+*AssetApi* | [**create_asset**](docs/apis/tags/AssetApi.md#create_asset) | **post** /v1/asset | Create asset 
 *AssetApi* | [**get_asset_by_id**](docs/apis/tags/AssetApi.md#get_asset_by_id) | **get** /v1/asset/{game_id}/{id} | Retrieve asset by ID
 *AssetApi* | [**get_assets**](docs/apis/tags/AssetApi.md#get_assets) | **get** /v1/asset | Retrieve assets
 *AssetApi* | [**update_asset**](docs/apis/tags/AssetApi.md#update_asset) | **patch** /v1/asset/{id} | Update asset
@@ -188,6 +189,7 @@ Class | Method | HTTP request | Description
 *GameApi* | [**create_game**](docs/apis/tags/GameApi.md#create_game) | **post** /v1/game | Create Game
 *GameApi* | [**game_controller_get_games**](docs/apis/tags/GameApi.md#game_controller_get_games) | **get** /v1/game | Retrieve all games
 *GameApi* | [**get_game_by_id**](docs/apis/tags/GameApi.md#get_game_by_id) | **get** /v1/game/{game_id} | Retrieve Game
+*GameApi* | [**get_game_by_name**](docs/apis/tags/GameApi.md#get_game_by_name) | **get** /v1/game/name/{name} | Retrieve Game By Name
 *MintApi* | [**airdrop_asset_to_player**](docs/apis/tags/MintApi.md#airdrop_asset_to_player) | **post** /v1/mint/airdrop | Airdrop asset to player
 *MintApi* | [**award_asset_to_player**](docs/apis/tags/MintApi.md#award_asset_to_player) | **post** /v1/mint/award | Award asset to player
 *MintApi* | [**batch_mint_asset_by_player**](docs/apis/tags/MintApi.md#batch_mint_asset_by_player) | **post** /v1/mint/batch-player | Batch mint assets by player
@@ -204,6 +206,7 @@ Class | Method | HTTP request | Description
 *TransactionApi* | [**get_transaction_by_id**](docs/apis/tags/TransactionApi.md#get_transaction_by_id) | **get** /v1/transaction/{game_id}/{id} | Retrieve Transaction by ID
 *TransactionApi* | [**get_transactions**](docs/apis/tags/TransactionApi.md#get_transactions) | **get** /v1/transaction | Retrieve transactions
 *UtilitiesApi* | [**utility_controller_health**](docs/apis/tags/UtilitiesApi.md#utility_controller_health) | **get** /v1/utilities/health | 
+*DefaultApi* | [**chat_controller_get_sql_report**](docs/apis/tags/DefaultApi.md#chat_controller_get_sql_report) | **get** /v1/chat/report | 
 *DefaultApi* | [**chat_controller_webhook**](docs/apis/tags/DefaultApi.md#chat_controller_webhook) | **post** /v1/chat/webhook | 
 
 ## Documentation For Models

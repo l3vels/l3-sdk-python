@@ -3,6 +3,7 @@ import typing_extensions
 from l3vels.paths import PathValues
 from l3vels.apis.paths.v1_utilities_health import V1UtilitiesHealth
 from l3vels.apis.paths.v1_game_game_id import V1GameGameId
+from l3vels.apis.paths.v1_game_name_name import V1GameNameName
 from l3vels.apis.paths.v1_game import V1Game
 from l3vels.apis.paths.v1_contract_collection_size import V1ContractCollectionSize
 from l3vels.apis.paths.v1_contract_contract_uri import V1ContractContractUri
@@ -28,12 +29,14 @@ from l3vels.apis.paths.v1_mint_airdrop import V1MintAirdrop
 from l3vels.apis.paths.v1_mint_player import V1MintPlayer
 from l3vels.apis.paths.v1_mint_batch_player import V1MintBatchPlayer
 from l3vels.apis.paths.v1_chat_webhook import V1ChatWebhook
+from l3vels.apis.paths.v1_chat_report import V1ChatReport
 
 PathToApi = typing_extensions.TypedDict(
     'PathToApi',
     {
         PathValues.V1_UTILITIES_HEALTH: V1UtilitiesHealth,
         PathValues.V1_GAME_GAME_ID: V1GameGameId,
+        PathValues.V1_GAME_NAME_NAME: V1GameNameName,
         PathValues.V1_GAME: V1Game,
         PathValues.V1_CONTRACT_COLLECTIONSIZE: V1ContractCollectionSize,
         PathValues.V1_CONTRACT_CONTRACTURI: V1ContractContractUri,
@@ -59,6 +62,7 @@ PathToApi = typing_extensions.TypedDict(
         PathValues.V1_MINT_PLAYER: V1MintPlayer,
         PathValues.V1_MINT_BATCHPLAYER: V1MintBatchPlayer,
         PathValues.V1_CHAT_WEBHOOK: V1ChatWebhook,
+        PathValues.V1_CHAT_REPORT: V1ChatReport,
     }
 )
 
@@ -66,6 +70,7 @@ path_to_api = PathToApi(
     {
         PathValues.V1_UTILITIES_HEALTH: V1UtilitiesHealth,
         PathValues.V1_GAME_GAME_ID: V1GameGameId,
+        PathValues.V1_GAME_NAME_NAME: V1GameNameName,
         PathValues.V1_GAME: V1Game,
         PathValues.V1_CONTRACT_COLLECTIONSIZE: V1ContractCollectionSize,
         PathValues.V1_CONTRACT_CONTRACTURI: V1ContractContractUri,
@@ -91,5 +96,6 @@ path_to_api = PathToApi(
         PathValues.V1_MINT_PLAYER: V1MintPlayer,
         PathValues.V1_MINT_BATCHPLAYER: V1MintBatchPlayer,
         PathValues.V1_CHAT_WEBHOOK: V1ChatWebhook,
+        PathValues.V1_CHAT_REPORT: V1ChatReport,
     }
 )

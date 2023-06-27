@@ -11,6 +11,7 @@
 """
 
 from l3vels.paths.v1_asset_count_game_id.get import CountByGame
+from l3vels.paths.v1_asset.post import CreateAsset
 from l3vels.paths.v1_asset_game_id_id.get import GetAssetById
 from l3vels.paths.v1_asset.get import GetAssets
 from l3vels.paths.v1_asset_id.patch import UpdateAsset
@@ -18,6 +19,7 @@ from l3vels.paths.v1_asset_id.patch import UpdateAsset
 
 class AssetApi(
     CountByGame,
+    CreateAsset,
     GetAssetById,
     GetAssets,
     UpdateAsset,
